@@ -1,0 +1,231 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
+%\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{dcolumn}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mdframed,xcolor} 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{titling}
+\usepackage[a4paper, margin=1.7cm]{geometry}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=--, nosep}
+\newtheorem{definition}{Definition}[section]
+
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\definecolor{boxframe}{RGB}{150,58,78}   
+\definecolor{boxback}{RGB}{248,238,239}
+\definecolor{darkgreen}{RGB}{0,100,0}
+
+\usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+\title{\textbf{\Large Ideas of Research Questions}
+    \\{\large Public Economics - Enrico Rubolino 3A ENSAE}
+}
+\author{Antony Albergne, Lucie Land, Isaure Pillet, Eve Samani}
+\date{Fall 2026}
+ 
+ \usepackage{fancyhdr}
+\fancypagestyle{plain}{ 
+    \fancyhf{}
+    \fancyhead[L]{ENSAE - IP Paris -- \thedate}
+    \fancyhead[C]{\includegraphics[height=0.8cm]{images/logo.png}}
+    \fancyhead[R]{\theauthor}
+}
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vspace*{-0.8cm}
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    %{\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em}
+\makeatother
+
+\usepackage{lipsum}  
+
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Gender Inequality and Taxation}
+
+
+\subsection*{Who Pays When Fathers Don’t? Child Support Enforcement, Single Mothers, and Debtor Responses in France} 
+
+\paragraph{Motivation} \\
+
+Single-parent families are among the poorest households in France, and child support is a central but unreliable part of their resources. Around ?\% of single parents are women, and ?\% of child support payments go entirely or partly unpaid, even though child support makes up ?\% of single-parent families’ resources. Historically, the burden of enforcement fell on the creditor parent, through costly and slow legal procedures, with the allocation de soutien familial (ASF) acting as a partial public insurance against default. \\
+
+\href{https://caf.fr/professionnels/offres-et-services/caf-du-bas-rhin/partenaires-locaux/actualites/pensions-alimentaires-l-intermediation-financiere-devient-automatique}{Article de la CAF} \\
+
+France has recently reorganised this system. Under the intermédiation financière des pensions alimentaires (IFPA), the debtor parent pays the CAF/MSA agency (ARIPA) each month, which then transfers the amount to the creditor parent. \\
+
+\href{https://pension-alimentaire.caf.fr/usagers/aides-et-demarches/intermediation-financiere}{Article CAF sur l'intermédiation financière}, \href{https://www.service-public.gouv.fr/particuliers/vosdroits/F36407}{Information service public} \\
+
+The state thus moved from ex post recovery to ex ante intermediation, by default. Despite its scale, the reform has not been causally evaluated. The existing assessment is mainly qualitative: a 2022 CNAF study based on interviews with parents, CAF staff, legal professionals, and associations (\href{https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://caf.fr/sites/default/files/medias/cnaf/Nous_connaitre/Recherche_et_statistiques/Dossiers_d_etudes/2024_DE_233_Intermediation_financiere_CNAF.pdf&ved=2ahUKEwjZxoL8uLaXAxVSVaQEHbc5Ac4QFnoECBwQAQ&usg=AOvVaw29VWWYqhSKu3dV6-HhUK6o}{Link to the study}. 
+
+\textit{It seems} there is no quantitative estimate of its effects on payments, maternal outcomes, or debtor behaviour. The question is directly relevant to current policy: a bill proposing a “guaranteed child support” scheme, including provisional fixing of payments, was examined in the National Assembly in spring 2026
+
+\paragraph{Research Question} \\
+
+What are the effects of automatic public intermediation of child support on payment compliance, on the economic security of creditor parents, and on the behaviour of debtor parents ? \\
+
+\noindent Other related questions : 
+\begin{itemize}
+    \item Does switching from opt-in to default intermediation increase take-up and the regularity of payments?
+    \item Does more secure child support income affect mothers’ labour supply, their reliance on some benefits (RSA, prime d’activité, ASF), and child poverty?
+    \item What is the net fiscal cost of the reform, and what is its welfare value per euro spent?
+
+\end{itemize}
+
+\paragraph{Identification Strategy}
+\begin{itemize}
+    \item \textbf{Difference-in-discontinuities} (main specification): the default was introduced at two dates for two groups: judicial divorces ruled from 1 March 2022, and all other separations (unmarried couples, mutual-consent divorces filed with a notary, CAF-issued titles) from 1 January 2023. At each cutoff, the group whose status changes is compared with the group whose status does not: other separations serve as control in March 2022, and already-treated judicial divorces in January 2023. This nets out shocks common to both groups at the cutoff date (seasonality, start-of-year effects, concurrent reforms). Since intermediation was already available on request before the default, the estimand is the intent-to-treat effect of the default relative to opt-in. If take-up is observed, the first stage can be estimated as well. Couples may have switched from judicial to notarial divorce between the two dates to avoid the default, so the shares of each divorce type are tested around the cutoffs; the January 2023 cutoff, after which no such switch is possible, provides a check less exposed to this substitution.
+    \item \textbf{Staggered difference-in-differences} (robustness): event time is defined relative to each group's own treatment date, using estimators robust to heterogeneous treatment timing. Between March and December 2022, the not-yet-treated group serves as control; after January 2023 all new separations are treated, which limits the post-period of this comparison. Effects are first estimated separately by group and tested for equality before being pooled.
+\end{itemize}
+
+
+
+
+\paragraph{Data}
+\begin{itemize}
+    \item Tax data: child support is declared on both sides, as taxable income for the receiver and a deduction for the payer $\rightarrow$ would allow creditor and debtor to be matched and payments to be observed directly.
+    \item CNAF administrative data : ASF receipt, IFPA status, means-tested benefits, household composition.
+    \item ARIPA administrative records : ayment regularity, defaults, recovery, if access can be obtained.
+\end{itemize}
+
+
+\paragraph{Mechanisms and Policy Relevance}
+\begin{itemize}
+    \item \textbf{Payment regularity and debtor behaviour}: monthly amounts received, frequency and duration of defaults, and income volatility, from CNAF and ARIPA records. The gain for the creditor combines higher compliance by the debtor and the recovery ASF paid in case of default; separating the two indicates whether default intermediation is sufficient, or whether a guaranteed advance scheme such as the one debated in 2026 is needed to secure single-parent incomes.
+    \item \textbf{Labour supply and living standards}: employment, hours and earnings of the creditor parent, equivalised household income and child poverty. The expected effect on labour supply is ambiguous (income effect versus reduced precautionary work). Since creditors are overwhelmingly mothers, these outcomes measure the reform's effect on gender gaps in post-separation living standards.
+    \item \textbf{Take-up and defaults}: the shift from opt-in to default is a large-scale test of whether defaults raise take-up of public services, with lessons for the non-take-up of benefits more broadly.
+    \item \textbf{Benefits and fiscal cost}: receipt of RSA, prime d'activité and ASF, which depend mechanically on child support received and are therefore treated as fiscal outcomes. Combined with administrative costs, they yield an MVPF comparable with other transfers aimed at single parents.
+    \item \textbf{Heterogeneity}: by pre-separation dependence on child support, debtor employment status, and number and age of children.
+\end{itemize}
+
+
+
+
+\bigskip
+
+\section*{Public debt, public finance and redistribution}
+
+\subsection*{Taxing Top Incomes: Behavioural Responses to France's Minimum Effective Income Tax (CHDR)}
+
+\paragraph{Motivation} \\
+
+Fiscal consolidation through higher taxation of top-income households is often considered a way to raise public revenue while limiting adverse effects on aggregate consumption. However, its effectiveness depends on the behavioural responses of high-income taxpayers, who may adjust the timing, composition, or reporting of their income.
+
+France's introduction of the \textit{Contribution différentielle sur les hauts revenus} (CDHR) in 2025 provides an opportunity to investigate these responses. The reform aims to ensure a minimum effective income tax rate of 20\% for certain high-income households, with reference-income thresholds of EUR 250,000 for single taxpayers and EUR 500,000 for jointly taxed couples.
+
+Preliminary figures suggest tha\textbf{t the reform generated substantially less revenue in its first year than initially forecast. }However, this discrepancy may reflect behavioural responses, forecasting errors, or differences between advance payments and final tax liabilities.
+
+The central question is therefore whether high-income taxpayers respond to higher taxation by reducing their economic activity or by shifting income across time, income categories, or legal entities.
+
+\href{https://www.impots.gouv.fr/actualite/contribution-differentielle-sur-les-hauts-revenus-cdhr}{DGFiP -- CDHR}
+
+\paragraph{Research Question} \\
+
+\textbf{How does the introduction of a minimum effective income tax affect the level, composition, and timing of income reported by high-income households?} // to be reformulated \\
+\textbf{To what extent can behavioural responses to the CHDR explain its revenue shortfall, and what does this response reveal about the elasticity of taxable income among high-income households ?} \\
+\noindent Other related questions: 
+\begin{itemize}
+    \item Do taxpayers respond by postponing dividend distributions or capital gains realisations?
+    \item Are behavioural responses concentrated in capital income rather than labour income?
+    \item To what extent do these responses reduce the revenue-raising capacity of progressive taxation?
+    \item Can behavioural adjustments explain part of the discrepancy between expected and realised CDHR revenues?
+\end{itemize}
+
+
+
+\paragraph{Contribution to the Literature} \\
+
+The project builds on the literature on the \textit{elasticity of taxable income}. Saez, Slemrod and Giertz (2012) provide a framework for understanding how taxpayers respond to changes in taxation and the implications of these behavioural responses for tax revenue and optimal taxation.
+
+More specifically, Lefebvre, Lehmann and Sicsic (2025) study responses to capital income taxation in France, showing that cross-base responses can substantially affect estimates of revenue-maximising tax rates.
+
+The project also relates to the literature on the heterogeneous macroeconomic effects of taxation. Zidar (2019) finds that the employment effects of income tax cuts in the United States are largely driven by tax changes affecting lower-income households. Ferriere and Navarro (2025) show that the progressivity of tax financing shapes fiscal multipliers through heterogeneous consumption and labour supply responses.
+
+While these studies highlight the importance of tax incidence and behavioural heterogeneity, our project focuses on a different adjustment margin: the ability of high-income taxpayers to modify the timing and composition of their taxable income.
+
+The proposed contribution is to provide empirical evidence on behavioural responses to the CDHR, distinguishing income shifting and timing responses from changes in underlying economic activity, and assessing their potential role in explaining the reform's revenue shortfall.
+
+\medskip
+
+\noindent \textbf{Related literature:}
+\begin{itemize}
+    \item \href{https://doi.org/10.1257/jel.50.1.3}
+    {Saez, Slemrod and Giertz (2012) -- The Elasticity of Taxable Income with Respect to Marginal Tax Rates}
+
+    \item \href{https://doi.org/10.1111/sjoe.12578}
+    {Lefebvre, Lehmann and Sicsic (2025) -- Estimating the Laffer Tax Rate on Capital Income: Cross-Base Responses Matter!}
+
+    \item \href{https://doi.org/10.1086/701424}
+    {Zidar (2019) -- Tax Cuts for Whom? Heterogeneous Effects of Income Tax Changes on Growth and Employment}
+
+    \item \href{https://doi.org/10.1093/restud/rdae025}
+    {Ferriere and Navarro (2025) -- The Heterogeneous Effects of Government Spending: It's All About Taxes}
+\end{itemize}
+
+
+\paragraph{Identification Strategy}
+\begin{itemize}
+    \item \textbf{Difference-in-differences:} compare the evolution of taxable income among households with different predicted exposure to the CDHR, using pre-reform income and tax characteristics to define treatment intensity. Household and year fixed effects would control for time-invariant heterogeneity and common shocks.
+
+    \item \textbf{Event study:} examine dynamic income responses around the reform's announcement and implementation, including potential anticipatory adjustments in 2024 and pre-treatment trends.
+
+    \item \textbf{Income-source decomposition:} separately estimate responses in dividends, realised capital gains, labour income, and business income to identify the main margins of adjustment.
+
+    \item \textbf{Bunching analysis (complementary):} investigate excess mass around relevant income thresholds, accounting for the CDHR's complex eligibility and tax calculation rules.
+\end{itemize}
+
+\paragraph{Potential Data}
+\begin{itemize}
+    \item \textbf{DGFiP individual income tax records:} longitudinal information on household income, income composition, reference income, and tax liabilities, potentially accessible through secure administrative data environments (subject to authorisation).
+    \item \textbf{DGFiP aggregate CDHR statistics:} number of liable households, assessed liabilities, advance payments, and final revenues, depending on availability.
+    \item \textbf{Firm-level administrative data:} potentially linked information on company profits and dividend distributions to investigate income retention in holding companies (feasibility to be verified).
+    \item \textbf{TAXIPP microsimulation:} potentially useful for constructing counterfactual tax liabilities and predicted exposure to the reform, subject to access and implementation constraints.
+\end{itemize}
+
+\paragraph{Identification Challenges}
+\begin{itemize}
+    \item \textbf{Endogenous eligibility:} taxpayers may adjust their income to avoid the contribution, making treatment status based on contemporaneous income endogenous.
+    \item \textbf{Complex tax schedule:} eligibility depends not only on income thresholds but also on the household's effective tax rate.
+    \item \textbf{Anticipation effects:} income shifting may begin before the reform takes effect.
+    \item \textbf{Short post-reform period:} distinguishing temporary timing responses from persistent changes may be difficult.
+    \item \textbf{Data access:} obtaining detailed administrative tax records and linked firm-level information may be challenging.
+\end{itemize}
+
+\paragraph{Policy Relevance}
+\begin{itemize}
+    \item \textbf{Fiscal consolidation:} assess the revenue-raising potential of progressive taxation once behavioural responses are taken into account.
+    \item \textbf{Tax design:} identify whether minimum effective taxes encourage income shifting, delayed realisations, or other avoidance strategies.
+    \item \textbf{Efficiency and redistribution:} distinguish real economic responses from changes in reported taxable income, helping to assess the efficiency costs of taxing top incomes.
+    \item \textbf{Revenue forecasting:} improve the understanding of discrepancies between mechanically predicted and realised tax revenues.
+\end{itemize}
+
+\printbibliography
+
+\end{document}

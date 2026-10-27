@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
+%\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{dcolumn}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mdframed,xcolor} 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{titling}
+\usepackage[a4paper, margin=1.7cm]{geometry}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=--, nosep}
+\newtheorem{definition}{Definition}[section]
+
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\definecolor{boxframe}{RGB}{150,58,78}   
+\definecolor{boxback}{RGB}{248,238,239}
+\definecolor{darkgreen}{RGB}{0,100,0}
+
+\usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+\title{\textbf{\Large Literature Review}
+    \\{\large Public Economics - Enrico Rubolino 3A ENSAE}
+}
+\author{Antony Albergne, Lucie Land, Isaure Pillet, Eve Samani}
+\date{Fall 2026}
+ 
+ \usepackage{fancyhdr}
+\fancypagestyle{plain}{ 
+    \fancyhf{}
+    \fancyhead[L]{ENSAE - IP Paris -- \thedate}
+    \fancyhead[C]{\includegraphics[height=0.8cm]{images/logo.png}}
+    \fancyhead[R]{\theauthor}
+}
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vspace*{-0.8cm}
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    %{\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em}
+\makeatother
+
+\usepackage{lipsum}  
+
+
+\begin{document}
+
+\maketitle
+
+{\Large \textbf{Who Pays When Fathers Don’t ? Child Support Enforcement, Single Mothers, and Debtor Responses in France}}\\
+
+\noindent \textbf{Research Question}: What are the effects of automatic public intermediation of child support on payment compliance, on the economic security of creditor parents, and on the behaviour of debtor parents ? \\
+
+\noindent Other related questions :
+\begin{itemize}
+    \item Does switching from opt-in to default intermediation increase take-up and the regularity of payments?
+    \item Does more secure child support income affect mothers’ labour supply, their reliance on some benefits (RSA,prime d’activité, ASF), and child poverty ? 
+    \item What is the net fiscal cost of the reform, and what is its welfare value per euro spent?
+\end{itemize}
+
+
+%%%%%%% SECTION 1 %%%%%%%%%%%
+\section{Theoretical Framework}
+
+%%%%%%% SECTION 2 %%%%%%%%%%%
+\section{Automatic Withholding and Payment Compliance}
+
+%%%%%%% SECTION 3 %%%%%%%%%%%
+\section{Responses of Paying Parents}
+
+%%%%%%% SECTION 4 %%%%%%%%%%%
+\section{Receiving Mothers: Labor Supply, Benefits, and Living Standards}
+
+\subsection{C. Bonnet, B. Garbinti, A. Solaz, ``The Flip Side of Marital Specialization: The Gendered Effect of Divorce on Living Standards and Labor Supply'', Journal of Population Economics, 2021}
+
+\paragraph{Motivation} Divorce hurts women more than men. In prior studies, women’s living standards fall by 10–40\%, while men’s stay stable or rise.
+The usual explanation is \textbf{custody}: mothers bear the cost of raising the children. The authors argue this is only part of the story.
+Theory (Cigno 2012; Lafortune \& Low 2019) treats marriage as a commitment device. It lets one spouse specialize in home production in exchange for compensation. If that compensation is insufficient at divorce, the cost of specialization shows up.
+Existing evidence has three weaknesses:
+\begin{itemize}
+    \item It mostly compares the same people before and after divorce, which is not causal.
+    \item It relies on small survey samples with non-random attrition.
+    \item It often observes only one side of child support (paid or received, not both).
+\end{itemize}
+
+
+\paragraph{Research question} What is the causal effect of divorce on each ex-spouse’s living standard and labor supply? And is the gender gap driven mainly by the number of children or by within-couple earnings inequality, used as a proxy for marital specialization?
+
+
+\paragraph{Data and design} Data: exhaustive French income-tax and housing-tax returns. The sample covers couples who divorced or dissolved a PACS in 2009, aged 20–55: about 64k women and 56k men. \\
+
+\noindent Outcome: living standard in 2008 vs 2010, built in three steps:
+\begin{itemize}
+    \item pre-transfer income,
+    \item plus child support,
+    \item plus net public transfers (benefits are imputed).
+\end{itemize}
+
+\noindent Method: difference-in-differences combined with nearest-neighbor propensity score matching.
+Matching is done separately in 24 groups defined by gender × number of children × the man’s share of couple earnings.
+It uses more than 40 covariates, including earnings in each of the 3 years before divorce.
+
+\paragraph{Contributions} \textbf{Data}: both ex-partners are observed, with child support both paid and received. Attrition is 7\% and is reweighted. \\
+\noindent \textbf{Causal estimates}: women lose 19\% (vs –14\% before–after). For men, the sign flips to –2\% (vs +3.5\% before–after). \\
+\noindent \textbf{Mechanism}: An accounting decomposition (eq. 1–2) and the regressions both show that within-couple earnings inequality matters far more than the number of children.
+The second earner loses regardless of gender. Men who earned less than 40\% of couple earnings lose about 20\%. \\
+\noindent \textbf{Role of transfers}: Public transfers remove the link between number of children and women’s losses.
+Child support raises women’s living standard by about 6 percentage points and reduces men’s gain by about 9 points. \\
+\noindent \textbf{Labor supply}: Previously inactive women are 29 percentage points more likely to enter work than their matched controls.
+Working women’s labor income rises by 12\%. Divorced men face about a 40\% higher risk of unemployment.
+Robustness: results hold for medians, alternative equivalence scales, PACS dissolutions and the repartnered sample. Repartnering largely offsets the losses.
+
+%%%%%%% SECTION 5 %%%%%%%%%%%
+\section{Guaranteed Maintenance, Tax-Benefit Interactions, and Default Effects}
+
+%%%%%%% SECTION 6 %%%%%%%%%%%
+\section{French Institutional Sources}
+
+\end{document}
