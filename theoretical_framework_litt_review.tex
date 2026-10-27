@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2cm}
+
+\begin{document}
+
+\begin{center}
+\Large\textbf{Theoretical Framework Literature Review}
+\end{center}
+\vspace{0.4cm}
+
+\noindent\textbf{1. Post-Separation Inefficiency and Market Failure} \\
+Public intervention in child support enforcement addresses an allocative market failure. Following \textbf{Weiss and Willis (1993)}, expenditures on children are a public good within an intact household. Post-separation, physical custody is typically held by the mother, while the father makes a monetary transfer. This creates an asymmetric information problem: the non-custodial parent cannot monitor whether the transfer funds child-specific goods or the mother's private consumption. This free-riding dynamic leads to a non-cooperative equilibrium characterized by sub-optimal child investment and high default rates, although repeated interactions and remarriage prospects can partially mitigate underinvestment (\textbf{Chiappori and Weiss, 2007}).
+
+\vspace{0.35cm}
+\noindent\textbf{2. Parental Optimization Programs} \\
+The policy directly reshapes both parents' constraints. For the \textit{custodial mother}, the program is $\max U_m(c_m, l_m)$ subject to:
+\begin{equation}
+c_m = w_m h_m + \tau S + T(w_m h_m, \tau S)
+\end{equation}
+where $h_m$ denotes hours worked, $w_m$ the wage rate, $\tau \in [0, 1]$ the payment compliance rate of legal support $S$, and $T(\cdot)$ the net tax-and-transfer schedule (including ASF and RSA).
+
+For the \textit{debtor father}, the program consists in choosing an effort/compliance rate $e \in [0,1]$:
+\begin{equation}
+\max_{e \in [0,1]} \; U_d\big(y_d - e S - C(e; \theta)\big) + \gamma U_{\text{child}}(S_{\text{received}})
+\end{equation}
+where $C(e; \theta)$ denotes the psychological, administrative, and legal costs of evasion under state enforcement stringency $\theta$.
+
+\vspace{0.35cm}
+\noindent\textbf{3. Proven Results in the Literature} \\
+The empirical literature highlights clear behavioral margins:
+\begin{itemize}
+    \setlength\itemsep{0.15em}
+    \item \textbf{Debtor Compliance and Labor Supply:} Routine income withholding increases collections by 11\% to 30\% (\textbf{Garfinkel and Klawitter, 1990}). However, excessive or rigid enforcement burdens can reduce formal employment among disadvantaged fathers (\textbf{Cancian, Heinrich, and Chung, 2013}), and higher monetary obligations may lead fathers to substitute financial transfers for contact time (\textbf{Rossin-Slater and Wüst, 2018}).
+    \item \textbf{Creditor Labor Supply:} The effect on custodial mothers combines conflicting margins: a pure income effect from received support tends to reduce hours worked (\textbf{Hu, 1999}), whereas stricter enforcement can increase labor force attachment among welfare-reliant mothers (\textbf{Garfinkel, Heintze, and Huang, 2001}).
+    \item \textbf{Frictions and Defaults:} Opt-in mechanisms generate substantial non-take-up due to cognitive, informational, and administrative costs (\textbf{Bhargava and Manoli, 2015}). In contrast, automatic default enrollment substantially raises participation without altering statutory economic parameters (\textbf{Madrian and Shea, 2001}).
+\end{itemize}
+
+\vspace{0.35cm}
+\noindent\textbf{4. Application to the IFPA Reform and Expected Outcomes} \\
+The 2022--2023 French reform shifted the IFPA from an opt-in procedure to default public intermediation, neutralizing application frictions and interpersonal conflict costs. Mechanically increasing enforcement stringency $\theta$ and expected compliance $\mathbb{E}[\tau]$ leads to key testable predictions:
+\begin{enumerate}
+    \setlength\itemsep{0.15em}
+    \item \textbf{Compliance and Income Stability:} A discrete surge in payment regularity and a marked reduction in income volatility for lone mothers.
+    \item \textbf{Maternal Adjustments:} An ambiguous net effect on labor supply (income effect vs.\ dampened precautionary labor motives), paired with lower child poverty.
+    \item \textbf{Fiscal Externalities:} A direct crowd-out of public support: higher private compliance lowers public outlays on the advance maintenance allowance (ASF) and RSA, driving a favorable Marginal Value of Public Funds (MVPF).
+    \item \textbf{Debtor Margin:} Potential labor supply contraction or informal reallocation among liquidity-constrained fathers.
+\end{enumerate}
+
+\end{document}
