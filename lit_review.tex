@@ -7,6 +7,8 @@
 
 %\usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{tabularx, pdflscape, array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \usepackage{float}
 \usepackage{rotating}
 \usepackage{dcolumn}
@@ -77,6 +79,35 @@
     \item Does more secure child support income affect mothers’ labour supply, their reliance on some benefits (RSA,prime d’activité, ASF), and child poverty ? 
     \item What is the net fiscal cost of the reform, and what is its welfare value per euro spent?
 \end{itemize}
+
+\begin{landscape}
+\begin{table}[p]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.3}
+\caption{Comparison of the closest papers}
+\label{tab:litreview}
+\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{2.6cm} Y Y Y Y Y @{}}
+\toprule
+\textbf{Paper} & \textbf{Question and mechanism} & \textbf{Setting and data} & \textbf{Identification} & \textbf{Main finding} & \textbf{Limits and relevance} \\
+\midrule
+Bonnet, Garbinti \& Solaz (2021), \textit{Journal of Population Economics}
+&
+Causal effect of divorce on living standards and labour supply of each ex-spouse. Is the gender gap driven by the number of children or by within-couple earnings inequality (marital specialisation)? Role of child support and public transfers.
+&
+France. Exhaustive income and housing tax returns. Divorces and PACS dissolutions in 2009, ages 20--55 (64,393 women, 56,299 men). Living standards in 2008 vs.\ 2010, built in three steps: pre-transfer, with child support, with net public transfers (benefits imputed).
+&
+Difference-in-differences combined with nearest-neighbour propensity score matching on still-married couples. Exact matching within 24 strata (gender $\times$ number of children $\times$ man's earnings share), 40+ covariates including 3 years of pre-divorce earnings. Assumes no time-varying unobserved confounders. Standard errors by subsampling.
+&
+Relative to controls, women's living standard falls by 18.5\%, men's by 2.1\%. Within-couple earnings inequality matters far more than the number of children. Child support reduces women's loss by about 6 pp and men's gain by about 9 pp; public transfers offset the gradient in number of children. Inactive women are 29 pp more likely to (re)enter work; working women's labour income rises by 12\%.
+&
+Limits: one-year horizon only; formal unions only; spousal alimony excluded; child support observed as declared paid, not as ordered, so non-payment is not identified; benefits assume 100\% take-up; pre-IFPA period (2009).
+Relevance: benchmark for creditor-side outcomes (living standards, labour supply) on French tax data; shows that tax returns record child support on both sides, which supports matching creditors and debtors.
+\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\end{landscape}
 
 
 %%%%%%% SECTION 1 %%%%%%%%%%%
