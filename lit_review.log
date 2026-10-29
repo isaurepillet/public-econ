@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  29 OCT 2026 19:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  29 OCT 2026 19:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1020,7 +1020,7 @@ Overfull \hbox (4.78767pt too wide) in paragraph at lines 79--80
 []\OT1/cmr/m/n/10 Does more se-cure child sup-port in-come af-fect moth-ers' labour sup-ply, their re-liance on some ben-e-fits (RSA,prime
  []
 
-<images/logo.png, id=39, 1003.75pt x 1003.75pt>
+<images/logo.png, id=43, 1003.75pt x 1003.75pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 83.
@@ -1037,12 +1037,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  <./images/logo.png>] (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [2] [3
 
 
-] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+] [4] [5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1076
 
  []
 
-[6] (./lit_review.aux)
+[9] [10] (./lit_review.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
@@ -1054,25 +1054,25 @@ Package rerunfilecheck Warning: File `lit_review.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `lit_review.out':
-(rerunfilecheck)             Before: 9D4CCDFA2B4F9FAF61E8D5F6C47A85A0;3133
-(rerunfilecheck)             After:  2FF62D07770AF5C29D60C4D7DF06EF64;3997.
+(rerunfilecheck)             Before: 2FF62D07770AF5C29D60C4D7DF06EF64;3997
+(rerunfilecheck)             After:  49F447015A4EE93FF38533E46984B507;4729.
 Package logreq Info: Writing requests to 'lit_review.run.xml'.
 \openout1 = `lit_review.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33645 strings out of 468979
- 659499 string characters out of 5455257
- 1569402 words of memory out of 5000000
- 62270 multiletter control sequences out of 15000+600000
+ 33665 strings out of 468979
+ 659742 string characters out of 5455257
+ 1570405 words of memory out of 5000000
+ 62273 multiletter control sequences out of 15000+600000
  635791 words of font info for 66 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  106i,14n,108p,1187b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/onyxia/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lit_review.pdf (6 pages, 232500 bytes).
+ </home/onyxia/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lit_review.pdf (10 pages, 260073 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 223 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 90 words of extra memory for PDF output out of 10000 (max. 10000000)
 
