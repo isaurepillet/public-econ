@@ -31,6 +31,9 @@
 \definecolor{boxback}{RGB}{248,238,239}
 \definecolor{darkgreen}{RGB}{0,100,0}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
 \usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
 \addbibresource{references.bib}
 
@@ -116,6 +119,132 @@ Relevance: benchmark for creditor-side outcomes (living standards, labour supply
 %%%%%%% SECTION 2 %%%%%%%%%%%
 \section{Automatic Withholding and Payment Compliance}
 
+ 
+\subsection*{Freeman, R. B. \& Waldfogel, J. (2001). « Dunning Delinquent Dads: The Effects of Child Support Enforcement Policy on Child Support Receipt by Never Married Women ». Journal of Human Resources, 36(2), 207--225}
+ 
+\noindent USA
+ 
+\noindent Result : child support expenditures and legislation work best in tandem
+ 
+\medskip
+\noindent Dans les années 1980 et 1990s, le nombre de familles monoparentales a augmenté, et pour lutter contre la pauvreté. En csq, les Etats et le gvt ont augmenté les dépenses de child support enforcement.
+ 
+\medskip
+\noindent Méthodologie : 5 sources de données qui permettent de photographier l'évolution dans les 70-90s des efforts de ces politiques pour garantir la pension alimentaire.
+ 
+\paragraph{Résultats :}
+\begin{itemize}
+    \item Résultat 1 : the proportion of never married mothers receiving child support payments rose sharply, in part due to the greater national effort to dun delinquent dads.
+ 
+    MAIS la part de l'ensemble des familles sans père qui reçoivent une pension reste constante $\Rightarrow$ est-ce un échec de toutes ces politiques pour forcer les pères à payer ?
+ 
+    Quelque chose a changé entre temps : sur la même période, la pop des mères seules se transforme : ce sont + des mères jamais mariées (et -- divorcées), qui reçoivent moins souvent une pension du fait notamment que la paternité n'est pas tjr établie. Ainsi, même s'il y a du progrès, comme la population change, il y a stagnation.
+ 
+    $\Rightarrow$ Cf France, regarder la part des séparations de couples non mariés (concubins, pacsés) augmente par rapport aux divorces. Si quelqu'un regarde le taux global d'impayés après l'IFPA, un effet de composition similaire peut masquer l'effet de la réforme.
+ 
+    \item Résultat 2 : les plus fortes hausses ont lieu dans les États qui ont à la fois augmenté leurs dépenses et durci leurs lois.
+\end{itemize}
+ 
+ 
+\subsubsection*{A. Government Efforts to Increase Child Support Payments}
+ 
+The laws passed in the 1970s and 1980s provided financial incentives for states to strengthen their child support enforcement efforts; they also required states to pass specific laws in the areas of wage withholding, paternity establishment, and so on.
+ 
+\medskip
+\noindent State efforts have targeted four stages in the process of dunning delinquent dads:
+\begin{enumerate}
+    \item Establishing paternity. En 1992, la paternité n'était pas établie pour les 2/3 des 1,2 Mo de naissances de femmes non mariées et 3,1 Mo d'enfants n'avaient pas de père légal.
+    \item Obtaining a support order : The federal government requires states to establish child support guidelines and use them in setting support orders
+    \item Locating the absent father. important in obtaining a support order and in enforcing one
+    \item Collecting money
+\end{enumerate}
+ 
+ 
+\subsubsection*{B. The Puzzle: Increased Effort but Stable Proportions of Support}
+ 
+Constat : suite à ces mesures, on a davantage de support orders, davantage d'argent MAIS de 1978 à 1995, la part de mères seules jamais mariées a considérablement augmenté, passant de 20\,\% à 30\,\%.
+ 
+ 
+\subsubsection*{Why has child support increased for never married women ?}
+ 
+Pourquoi la part des mères jamais mariées qui reçoivent une pension alimentaire a-t-elle augmenté aux États-Unis entre 1980 et 1995, de 4\,\% à 22\,\% ?
+ 
+\medskip
+\noindent Deux hypothèses :
+\begin{enumerate}
+    \item L'effort public : plus de dépenses de recouvrement et des lois plus strictes.
+    \item La composition : les mères jamais mariées, et leurs ex-partenaires, auraient des caractéristiques plus favorables au paiement.
+\end{enumerate}
+ 
+\medskip
+\noindent Pourquoi on peut écarter l'hypothèse de composition :
+\begin{itemize}
+    \item Les caractéristiques observables des mères se sont un peu améliorées : la part de diplômées du secondaire est passée d'environ 50\,\% à 70\,\% $\Rightarrow$ n'explique que 2\,\% de la hausse des années 1980.
+    \item Les inobservables jouent plutôt dans l'autre sens. Les pères concernés sont surtout des hommes jeunes peu qualifiés, dont la situation sur le marché du travail s'est dégradée. Cet effet aurait dû faire baisser les paiements $\Rightarrow$ renforce la conclusion en faveur de l'effort public.
+\end{itemize}
+ 
+\medskip
+\noindent critiques adressées à la littérature antérieure
+ 
+\noindent Les études précédentes trouvaient des résultats contradictoires, pour deux raisons :
+\begin{itemize}
+    \item introduisaient chaque loi séparément, alors que les lois sont difficiles à isoler (peu de variation dans le temps et entre États) et fonctionnent ensemble ;
+    \item traitaient dépenses et lois comme des déterminants indépendants, sans tenir compte de leurs interactions.
+\end{itemize}
+ 
+\paragraph{A. L'effet des dépenses de recouvrement}\mbox{}\\
+
+Méthodo : un modèle de probabilité linéaire où la variable expliquée vaut 1 si la mère reçoit une pension. Les régresseurs sont les caractéristiques individuelles, les dépenses de l'État par famille sans père l'année précédente, et des effets fixes État et année. Les données viennent du March CPS (1981-1995), avec des erreurs standards clusterisées.
+ 
+\medskip
+\noindent Résultats ds tableau 2 :
+\begin{itemize}
+    \item 100\,\$ de dépenses en plus par famille entraînent +1,4 point de taux de réception.
+    \item Contrôler la générosité de l'aide sociale (AFDC et Food Stamps) ne change rien.
+    \item Calcul de contribution : les dépenses ont augmenté de 276\,\$. Les dépenses expliqueraient donc environ 27\,\% de la hausse.
+\end{itemize}
+ 
+\paragraph{B. L'effet des lois}\mbox{}\\
+
+Problème : testées une par une, les 13 lois recensées (1974-1988) n'ont aucun effet cohérent.
+ 
+\medskip
+\noindent Pk ? pour qu'une pension soit payée, il faut réussir une chaîne d'étapes :
+\begin{enumerate}
+    \item établir la paternité ;
+    \item obtenir une décision fixant la pension ;
+    \item localiser le père ;
+    \item recouvrer l'argent.
+\end{enumerate}
+Une loi très dure sur le recouvrement ne sert à rien si la paternité n'est pas établie $\Rightarrow$ est-ce que le dispositif est complet ? $\Rightarrow$ c'est plutôt cette question qui compte
+ 
+\medskip
+\noindent Pour solutionner le design, on construit un indice synthétique (CSL index). Il est construit avec un modèle de Rasch: comme un élève qui réussit les questions rares est jugé plus compétent, un État qui a adopté les lois les plus rares est jugé plus avancé. L'indice passe de $-3{,}29$ en 1974 à $0{,}81$ en 1988, avec un saut après les Child Support Amendments de 1984.
+ 
+\medskip
+\noindent Résultats (tableau 3, 1981-1988) :
+ 
+\noindent L'interaction entre l'indice décalé de deux ans et les dépenses est positive et significative (0,0086, à 10\,\%).
+ 
+\noindent $\Rightarrow$ seules les lois adoptées 2 ans + tôt ont un effet. Les dépenses agissent vite, alors qu'une loi demande du temps : il faut créer le dispositif, former ou recruter du personnel.
+ 
+\paragraph{COnclusion}
+\begin{enumerate}
+    \item L'effort public explique une part importante de la hausse des paiements aux mères jamais mariées, environ 27\,\% au minimum pour les seules dépenses.
+    \item Les lois et les moyens sont complémentaires. Des lois sans budget, ou un budget sans lois, ont peu d'effet $\Rightarrow$ la combinaison fonctionne.
+    \item Les lois agissent avec retard (env 2 ans).
+\end{enumerate}
+ 
+\paragraph{Cf projet}
+\begin{itemize}
+    \item l'IFPA combine règle (l'intermédiation par défaut) et moyens (l'ARIPA, qui détecte l'impayé dès le premier mois et recouvre directement). Cf la q° dans l'article : l'effet vient-il du défaut ou de la capacité de recouvrement qu'il active ?
+    \item les étapes : en France, on retrouve la même logique, avec le titre exécutoire $\Rightarrow$ l'intermédiation $\Rightarrow$ recouvrement. L'IFPA n'agit qu'à partir de l'étape 2, donc rien ne change pour les parents sans titre exécutoire.
+    \item Les délais $\Rightarrow$ event-study ???
+\end{itemize}
+
+
+
+
 %%%%%%% SECTION 3 %%%%%%%%%%%
 \section{Responses of Paying Parents}
 
@@ -166,5 +295,124 @@ Robustness: results hold for medians, alternative equivalence scales, PACS disso
 
 %%%%%%% SECTION 6 %%%%%%%%%%%
 \section{French Institutional Sources}
+\subsection*{HCFEA (Conseil de la famille / Conseil de l'enfance et de l'adolescence) (2025). « Note sur l'intermédiation financière des pensions alimentaires ». Haut Conseil de la famille, de l'enfance et de l'âge}
+ 
+\textbf{État des lieux du déploiement de la réforme du service public de l'Intermédiation financière des pensions alimentaires (Ifpa)}
+ 
+\paragraph{Vocabulaire :}
+\begin{itemize}
+    \item CEEE : contribution à l'entretien et à l'éducation de l'enfant : nom juridique pour désigner la pension alimentaire. Somme que le parent débiteur verse au parent créancier (avec qui habite l'enfant)
+    \item ARIPA : Agence de recouvrement et d'intermédiation des pensions alimentaires : c'est l'organisme. Initialement, elle servait à recouvrer les impayés, et maintenant elle fait l'intermédiaire (nouveau).
+    \item IFPA : service (différent de l'organisme) : ainsi, le parent débiteur, au lieu de verser directement l'argent au parent créancier, le verse à l'ARIPA chaque mois
+    \item ASF (allocation de soutien familial) : prestation versée par la CAF au créancier d'environ 200\,\texteuro{} par enfant. Intervient dans 3 cas : 1. si le débiteur ne paie pas 2. La pension est inférieure au montant de l'ASF (allocation pour compléter) 3. Pas de pension fixé ou parent absent. Si le parent ne paie pas, l'Aripa lance le recouvrement auprès du débiteur (amiable ou forcé).
+\end{itemize}
+ 
+\medskip
+\noindent Ifpa introduite en 2017 d'abord seulement dans le cas de violences conjugales ou familiales avant d'être étendue progressivement :
+\begin{itemize}
+    \item A tous les cas dans lesquels un des parents en fait la demande (opt-in)
+    \item Puis tous les divorces / séparations SAUF lorsque les 2 parents s'y opposent (opt-out).
+\end{itemize}
+ 
+\medskip
+\noindent Mais plusieurs choses empêchent portée effective de l'Ifpa :
+\begin{itemize}
+    \item Problème d'application de l'Ifpa, qui est ainsi réservé aux divorces prononcés par décision judiciare et séparations de non-mariés
+    \item l'Ifpa ne s'applique pas lorsque le débiteur d'aliments est reconnu comme « hors d'état » de se soumettre à ses obligations $\Rightarrow$ pour les violences conjugales, l'Ifpa est obligatoire depuis 2022
+\end{itemize}
+ 
+\medskip
+\noindent De plus, l'Ifpa concerne que les sommes dues au titre de la contribution à l'entretien et à l'éducation de l'enfant (CEEE). On pourrait imaginer qu'elle s'applique également aux sommes dues au titre des prestations compensatoires lorsque celles-ci sont versées sous forme de rentes.
+ 
+\medskip
+\noindent Difficultés de fonctionnement quand l'Ifpa est mise en place :
+\begin{itemize}
+    \item retards dans le versement de l'ASF (allocation de soutien familial) en cas d'impayé
+    \item prévoir par décret solution sur les modalités de règlement de la pension
+\end{itemize}
+ 
+\medskip
+\noindent Pb : l'information relative aux séparations (nombre intervenant chaque année) et aux situations d'impayés de pensions alimentaires (fréquence des situations d'impayé, nombre de titres exécutoires délivrés ne donnant pas lieu à Ifpa, etc.) est lacunaire. Pour être réellement en capacité de mesurer l'efficacité du dispositif, il conviendrait d'améliorer le système de remontée d'informations.
+ 
+ 
+\subsubsection*{I. Etat des lieux du service public de l'intermédiation financière des pensions alimentaires}
+ 
+\paragraph{Déploiement progressif}
+Le champ d'application du nouveau service de l'Ifpa a été progressivement étendu au-delà des situations de violences conjugales :
+\begin{itemize}
+    \item à compter du 1er octobre 2020, l'intermédiation financière est accessible sur demande de l'un des parents auprès de l'Aripa à la suite d'un impayé de pension alimentaire (indépendamment de toute situation de violence) ;
+    \item à compter du 1er janvier 2021, levée de la condition de l'impayé : le service est étendu à tous les parents divorcés ou séparés qui en font la demande ;
+    \item à compter du 1er mars 2022, levée de la condition de demande : le service est systématisé, sans demande, pour tous les parents qui divorcent ;
+    \item à compter du 1er janvier 2023, extension aux parents séparés hors divorce : le service devient systématique, sans demande pour tous les parents qui se séparent, y compris les parents non mariés (ex-concubins et ex-pacsés).
+\end{itemize}
+ 
+\paragraph{Conditions d'application de l'intermédiation financière des pensions alimentaires}
+Actuellement, les sommes dues au titre des prestations compensatoires ne sont pas concernées par l'Ifpa (les prestations compensatoires servent à pallier la différence de niveau de vie qu'un divorce crée entre des époux).
+ 
+\medskip
+\noindent L'Ifpa est applicable sur l'ensemble du territoire français SAUF Mayotte, saint pierre et miquelon, polynésie française\dots
+ 
+\medskip
+\noindent Condition : disposer d'un titre exécutoire (l'acte juridique qui fixe le montant de la CEEE versée sous la forme d'une pension alimentaire) fourni par le parent créancier pour bénéficier du service d'intermédiation. Ce document permet de forcer l'exécution d'une obligation (plusieurs documents valent ce titre exécutoire : un jugement du juge, une convention de divorce, une convention homologuée par le juge, un document délivré par la CAF\dots).
+ 
+\medskip
+\noindent Pour pouvoir bénéficier du service de l'Ifpa, le parent créancier doit remplir la condition de stabilité de résidence sur le territoire français et de régularité du séjour. Le parent débiteur, lui, doit remplir la condition de stabilité de résidence.
+ 
+\medskip
+\noindent $\Rightarrow$ Le parent débiteur ne doit pas être hors d'état. Ces situations de hors d'état, qui se traduisent par des ASF non recouvrables, concernent, selon les données fournies par la Cnaf, 30\,\% des enfants bénéficiaires de l'ASF. Une ASF non recouvrable signifie que la CAF verse l'ASF au créancier sans chercher à se faire rembourser.
+ 
+\paragraph{Modalités de mise en œuvre}
+\begin{itemize}
+    \item Principe de l'automaticité de l'intermédiation pour les divorces ayant eu lieu après mars 2022 et pour les séparations ayant eu lieu après 2023 (avec deux exceptions)
+    \item Intermédiation sur demande pour les divorces ayant eu lieu avant mars 2022 et les séparations ayant eu lieu avant 2023 et pour les cas où elle n'a pas été initialement mise en place
+    \item Intermédiation obligatoire sur décision du juge en cas de violences conjugales
+\end{itemize}
+ 
+\medskip
+\noindent Pb : Les avocats et notaires ne transmettent pas nécessairement les titres exécutoires $\Rightarrow$ il faudrait rendre cette transmission automatique et obligatoire (cette transmission n'est pas encouragée par les acteurs au vu du faible nombre de titres exécutoires fournis par les avocats et notaires).
+ 
+\medskip
+\noindent La demande d'intermédiation financière, lorsqu'elle est demandée par les usagers, l'est principalement en raison d'un impayé de pension.
+ 
+\medskip
+\noindent $\Rightarrow$ Le caractère préventif de l'intermédiation voulue par le législateur en est affaibli.
+ 
+\medskip
+\noindent Problème 2 : la coexistence de 2 barèmes de fixation des pensions alimentaires, l'un propre à la justice, l'autre propre à l'Aripa (cf titre exécutoire évoqué plus haut, produit par la CAF dans les séparations non judiciaires) $\Rightarrow$ rend le dispositif complexe, et le recours aux titres exécutoires de la CAF plus faible : le barème qu'elle utilise conduit pour les trois-quarts des parents débiteurs à des montants de CEEE plus élevés que la table de référence indicative mise à disposition des juges aux affaires familiales (JAF) par le ministère de la Justice en avril 2010.
+ 
+\paragraph{Les modalités de versement de la pension alimentaire}
+Le parent débiteur d'une pension verse le montant à un tiers (l'ODPF, qui est dans la plupart des cas la CAF) qui reverse au parent créancier. Si impayé, l'ODPF informe le parent débiteur de régulariser sa situation sous 15 jours. Sinon, procédure de recouvrement forcé.
+ 
+\medskip
+\noindent 2 façons de prélever :
+\begin{itemize}
+    \item Prélèvement automatique (64\,\% des cas)
+    \item Ou versée directement par le débiteur à l'organisme, qui reverse au parent créancier.
+\end{itemize}
+ 
+\medskip
+\noindent MAIS PROBLEME : en cas de survenue d'un impayé dans le cadre d'une Ifpa, les parcours se complexifient et perdent en lisibilité pour le parent créancier, car, pour bénéficier du versement temporaire de l'ASF recouvrable, il doit en faire la demande lui-même.
+ 
+\paragraph{Les modalités de revalorisation et de révision de la CEEE}
+La pension alimentaire peut aussi être révisée pour tenir compte de l'évolution des besoins de l'enfant et des revenus de chacun des deux parents.
+AU moment du rapport, pas possible de demander à l'Aripa la révision d'une pension si celle-ci a été fixée par le juge.
+ 
+ 
+\subsubsection*{Premiers résultats du service public d'intermédiation financière}
+ 
+\paragraph{Le taux de recours au service}
+Forte progression depuis 2020. A mettre en lien avec nombre de divorces et séparations avec enfants donnant lieu à pension alimentaire suscpetible d'être intermédiée MAIS ce chiffre n'est pas connu.
+ 
+\paragraph{Perception du dispositif par les usagers}
+\begin{itemize}
+    \item Simplicité des démarches
+    \item Effets positifs pour les mères avec une amélioration de leur situation financière et matérielle, une atténuation de leur charge mentale et une plus grande légitimation de la pension comme droit
+\end{itemize}
+ 
+\medskip
+\noindent MAIS la Cour des comptes note un taux d'abandon important : 15\,\% des parents renoncent à l'intermédiation financière après en avoir demandé le bénéfice
+ 
+ 
+
 
 \end{document}
