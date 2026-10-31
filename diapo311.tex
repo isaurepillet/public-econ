@@ -36,23 +36,56 @@ ENSAE -- Institut Polytechnique de Paris\par\vspace{0.25cm}
 
 
 
+
 \begin{frame}{Data: Source, Coverage, and Sample}
+
 \small
-\renewcommand{\arraystretch}{1.27}
-\begin{tabularx}{\textwidth}{>{\bfseries}p{3.1cm}X}
+\renewcommand{\arraystretch}{1.35}
+
+\begin{tabularx}{\textwidth}{
+    >{\bfseries}p{3.0cm} X
+}
 \toprule
 Dimension & Proposed data and sample \\
 \midrule
-Source & ALLSTAT-FR6: administrative statistical files of CAF beneficiaries, produced by the French National Family Allowance Fund (CNAF); access via CASD subject to approval. \\
-Geography / period & Metropolitan France and, subject to consistent coverage, overseas territories; proposed observation window 2017--2025, with latest years subject to release and access. \\
-Unit of observation & Beneficiary/family case $\times$ month, conditional on the structure of available identifiers and files. \\
-Study population & Single-parent CAF beneficiary households with dependent children; analytical subsample with usable child support information. \\
-Main exclusions & Records without a reliable family identifier, dates or relevant child support measures; sample attrition and non-CAF households explicitly documented. \\
-Access / feasibility & Public documentation exists; research access, exact vintages, longitudinal linking and variable coverage require confirmation. \\
+
+Data source &
+ALLSTAT-FR6, administrative records on beneficiaries
+of the French Family Allowance Funds (CAF),
+produced by CNAF and available for research
+through CASD authorization. \\
+
+Geographical coverage &
+France; main analysis restricted to metropolitan
+France to ensure consistent geographical coverage. \\
+
+Study period &
+2017--2025, covering several years before and
+after the 2022--2023 IFPA reform. \\
+
+Unit of observation &
+CAF beneficiary case $\times$ month,
+with longitudinal tracking of households
+where identifiers permit. \\
+
+Target population &
+Single-parent beneficiary households with
+dependent children, focusing on families
+with identifiable child support arrangements. \\
+
+Sample construction &
+Identify single-parent households, construct
+monthly trajectories, and distinguish recorded
+child support obligations from missing information. \\
+
+Data access &
+ALLSTAT-FR6 is documented in the CASD catalogue;\\
+
 \bottomrule
 \end{tabularx}
-\smallnote{Source: CASD, ALLSTAT-FR6 catalogue; sample is proposed, not yet extracted.}
+
 \end{frame}
+
 
 \begin{frame}{Data: Sample Construction and Observation Unit}
 \small
