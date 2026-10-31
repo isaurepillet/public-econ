@@ -111,7 +111,6 @@ Check changes in beneficiary status and CAF transfers.
 Use \texttt{TPA} (child support indicator),
 \texttt{MTPADU} (amount due) and
 \texttt{MTALIMFO} (amount received by the household).
-Distinguish zero amounts from missing values.
 
 \item \textbf{Characterise family transitions.}
 Use \texttt{NBMSIFAM} (months since the last change
@@ -138,13 +137,15 @@ social benefits and reported resources.
 \end{frame}
 
 
+
 \begin{frame}{Data: Measuring Child Support}
 
-\small
-\renewcommand{\arraystretch}{1.25}
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
 
 \begin{tabularx}{\textwidth}{
->{\ttfamily}p{2.1cm} p{4.4cm} X
+>{\ttfamily}p{1.8cm} p{4.0cm} X
 }
 \toprule
 \textrm{\textbf{Variable}} &
@@ -186,9 +187,10 @@ in the ASF system. \\
 \bottomrule
 \end{tabularx}
 
-\vspace{0.15cm}
+\vspace{0.12cm}
 
 \begin{block}{Measurement issue}
+\scriptsize
 Recorded amounts may reflect declared resources rather
 than verified payments. Amounts due and received cannot
 yet be used to calculate an arrears rate.
@@ -196,26 +198,143 @@ yet be used to calculate an arrears rate.
 
 \end{frame}
 
-\begin{frame}{Data: Policy Exposure and Measurement Challenges}
-\small
-\begin{block}{Institutional variation}
-\textbf{March 2022:} automatic intermediation for newly fixed child support in judicial divorce proceedings.\par
-\textbf{January 2023:} extension to other relevant enforceable titles. Existing orders are not automatically equivalent to new orders under these rules.
-\end{block}
-\vspace{0.15cm}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+
+\begin{frame}{Data: Outcomes and Control Variables}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+
+\begin{tabularx}{\textwidth}{
+>{\bfseries}p{2.3cm} p{3.6cm} X
+}
 \toprule
-Needed for causal design & Status in ALLSTAT \\
+Category & ALLSTAT variables & Measurement and empirical role \\
 \midrule
-Exact order date & Not established; first observed pension is \emph{not} necessarily a newly issued order. \\
-Type of enforceable title & \texttt{NATJUG} may help, but meaning and coverage require checking. \\
-Actual IFPA enrollment & No confirmed direct indicator in currently reviewed variables. \\
-Actual monthly payments & Must establish whether recorded pension amounts measure payments or declarations. \\
+
+Primary outcome &
+\texttt{MTALIMFO}, \texttt{MTPALIFT} &
+Child support received by the household.
+Main outcome for assessing changes in recorded
+receipts following the reform. \\
+
+Social transfers &
+\texttt{ASFVERS}, \texttt{ASFCOMPL} &
+Family Support Allowance (ASF) and complementary
+ASF amounts payable. Potential adjustment
+when child support receipts change. \\
+
+Other benefits &
+\texttt{RSAVERS}; Prime d'activit\'e
+(amount variable to confirm) &
+Changes in means-tested benefits,
+potentially affected by child support
+and household resources. \\
+
+Household resources &
+\texttt{MTRNIFOY} &
+Household net taxable income.
+Proxy for economic resources, not a direct
+measure of disposable income. \\
+
+Demographics &
+\texttt{SEXE}, \texttt{DTNAIRES},
+\texttt{NBENLEFA} &
+Sex and age of the beneficiary;
+number of dependent children. \\
+
+Family composition &
+\texttt{SITFAM}, \texttt{PRESCONJ},
+\texttt{NBMSIFAM} &
+Family status, partner presence and
+months since the last family-status change. \\
+
+Geography &
+\texttt{NUMCOMDO} &
+Municipality identifier for geographical
+heterogeneity and potential area controls. \\
+
 \bottomrule
 \end{tabularx}
-\smallnote{Main distinction: policy eligibility, actual IFPA participation and observed child support receipts are not interchangeable.}
+
+\vspace{0.12cm}
+
+\begin{block}{Measurement and identification}
+\scriptsize
+ASF was revalued in November 2022, independently
+of the IFPA rollout. Benefit amounts and taxable
+income are not equivalent to disposable income.
+Controls must be measured before treatment.
+\end{block}
+
 \end{frame}
+
+
+\begin{frame}{Data: Policy Exposure and Measurement Challenges}
+
+\small
+
+\begin{block}{Staggered implementation of automatic intermediation}
+\textbf{March 2022:} automatic financial intermediation
+for newly fixed child support in judicial divorce proceedings.
+
+\textbf{January 2023:} extension to other enforceable
+child support orders.
+\end{block}
+
+\vspace{0.12cm}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.20}
+\setlength{\tabcolsep}{4pt}
+
+\begin{tabularx}{\textwidth}{
+>{\bfseries}p{2.7cm} p{3.7cm} X
+}
+\toprule
+Information required &
+Candidate ALLSTAT information &
+Implications for identification \\
+\midrule
+
+Date of child support order &
+No confirmed variable identifying the date
+of the enforceable order &
+First recorded pension cannot be interpreted
+as a newly established obligation. \\
+
+Type of enforceable title &
+\texttt{NATJUG}: nature of a judicial decision
+concerning a defaulting debtor &
+Cannot yet distinguish judicial divorces
+from other eligible procedures. \\
+
+IFPA participation &
+No direct participation indicator identified
+in the reviewed dictionary &
+Eligibility and actual treatment
+cannot be distinguished. \\
+
+Child support payments &
+\texttt{MTPADU}, \texttt{MTALIMFO},
+\texttt{MTPALIFT} &
+Amounts due and received may not reflect
+verified monthly payments. \\
+
+\bottomrule
+\end{tabularx}
+
+\vspace{0.12cm}
+
+\begin{block}{Key identification constraint}
+\scriptsize
+The reform's staggered rollout provides potential
+policy variation, but causal identification requires
+reliable information on order dates and legal categories.
+\end{block}
+
+\end{frame}
+
 
 \begin{frame}{Methodology: Source of Identification}
 
