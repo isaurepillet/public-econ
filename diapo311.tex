@@ -87,38 +87,113 @@ ALLSTAT-FR6 is documented in the CASD catalogue;\\
 \end{frame}
 
 
+
+
 \begin{frame}{Data: Sample Construction and Observation Unit}
+
 \small
-\begin{enumerate}\setlength{\itemsep}{0.22cm}
-\item \textbf{Start from monthly CAF beneficiary records} in available ALLSTAT-FR6 vintages (target: 2017--2025).
-\item \textbf{Identify single-parent family spells} using recorded household/family composition; distinguish entry into single parenthood from first observation in CAF data.
-\item \textbf{Recover child support information} and flag observations with usable measures of pension obligations/receipts; document missing and zero values separately.
-\item \textbf{Build a longitudinal panel} using stable case/beneficiary identifiers, checking changes of allocataire, CAF transfers and family composition.
-\item \textbf{Define policy cohorts only if feasible:} date of establishment of an enforceable child support order, and type of order; otherwise no order-based treatment indicator.
+\begin{enumerate}
+\setlength{\itemsep}{0.20cm}
+
+\item \textbf{Identify the study population.}
+Select single-parent CAF households with dependent children
+using \texttt{SITFAM} (family status),
+\texttt{PRESCONJ} (partner presence) and
+\texttt{NBENLEFA} (dependent children).
+
+\item \textbf{Construct longitudinal observations.}
+Use reference dates and anonymised identifiers
+(\texttt{DTREFFRE}, \texttt{IDANORES}) to assess
+whether households can be followed across periods.
+Check changes in beneficiary status and CAF transfers.
+
+\item \textbf{Identify child support arrangements.}
+Use \texttt{TPA} (child support indicator),
+\texttt{MTPADU} (amount due) and
+\texttt{MTALIMFO} (amount received by the household).
+Distinguish zero amounts from missing values.
+
+\item \textbf{Characterise family transitions.}
+Use \texttt{NBMSIFAM} (months since the last change
+in family status) to approximate recent changes,
+without interpreting them automatically as separations.
+
+
+\item \textbf{Assess treatment identification.}
+Investigate \texttt{NATJUG} (nature of the judicial decision
+concerning a defaulting child support debtor) and the
+availability of enforceable-order dates before defining
+reform-exposure cohorts.
+
+
 \end{enumerate}
-\vspace{0.12cm}
-\begin{block}{What does one row represent?}
-One CAF family case in month $t$, with observed family composition, child support-related fields, benefit amounts and reported resources.
+
+
+\begin{block}{Proposed observation unit}
+One CAF beneficiary case at each available reference date,
+with child support information, family characteristics,
+social benefits and reported resources.
 \end{block}
-\smallnote{Selection concern: CAF records do not represent all separated parents; case entry/exit may correlate with outcomes.}
+
 \end{frame}
 
-\begin{frame}{Data: Variables and Measurement}
-\scriptsize
-\renewcommand{\arraystretch}{1.32}
-\begin{tabularx}{\textwidth}{>{\bfseries}p{2.2cm}p{3.8cm}X}
+
+\begin{frame}{Data: Measuring Child Support}
+
+\small
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}{\textwidth}{
+>{\ttfamily}p{2.1cm} p{4.4cm} X
+}
 \toprule
-Concept & Candidate measures & Interpretation / validation needed \\
+\textrm{\textbf{Variable}} &
+\textbf{Dictionary description} &
+\textbf{Potential use} \\
 \midrule
-Child support $Y_{it}$ & \texttt{MTPADU}, \texttt{MTALIMFO}, \texttt{MTPALIFT}, \texttt{MTALIMVE} & Verify exact dictionary labels, units, periodicity, missing/zero coding and whether amounts are due, declared, fixed or actually received. \\
-Financial security & ASF eligibility/receipt and monthly amount & ASF may compensate for unpaid/low pensions; November 2022 ASF revaluation creates a major confounder. \\
-Other resources & RSA, Prime d'activit\'e, declared household resources & Outcomes may reflect benefit formulas and reporting lags rather than immediate disposable income. \\
-Household controls & Single-parent status, number/age of children, family composition & Potential controls and sample definitions; avoid conditioning on post-treatment changes. \\
-Policy exposure $D_i$ & \texttt{NATJUG} (candidate), order date/type if present & \texttt{NATJUG} alone must \emph{not} be assumed to identify IFPA participation or an order date. \\
-Timing & Monthly observation; dates of family changes and orders if available & Distinguish administrative recording date, separation date, order date and IFPA start. \\
+
+MTPADU &
+Amount of child support due &
+Measure of recorded child support obligations. \\
+
+MTALIMFO &
+Child support received by the household &
+Candidate outcome: child support receipts. \\
+
+MTALIMME &
+Child support received by the woman &
+Gender-specific measure of receipts. \\
+
+MTALIMVE &
+Child support paid by the household &
+Potential measure of outgoing child support. \\
+
+MTPALIFT &
+Quarterly child support received by the household &
+Alternative measure of receipts over a quarterly
+reference period. \\
+
+TPA &
+Child support indicator &
+Identification of households with recorded
+child support information. \\
+
+NBDEBPEN &
+Number of debtors associated with ASF &
+Potential information on child support debtors
+in the ASF system. \\
+
 \bottomrule
 \end{tabularx}
-\smallnote{Candidate ALLSTAT variables identified in preliminary dictionary review; operational definitions remain to be validated.}
+
+\vspace{0.15cm}
+
+\begin{block}{Measurement issue}
+Recorded amounts may reflect declared resources rather
+than verified payments. Amounts due and received cannot
+yet be used to calculate an arrears rate.
+\end{block}
+
 \end{frame}
 
 \begin{frame}{Data: Policy Exposure and Measurement Challenges}
