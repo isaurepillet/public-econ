@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  29 OCT 2026 19:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  31 OCT 2026 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,6 +678,42 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box83
 \tcb@temp=\box84
 \tcb@temp=\box85
+) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 ) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2026/09/24 v3.22a programmable bibliographies (PK/MW)
  (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty
@@ -920,28 +956,31 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
  (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
 \@quotelevel=\count486
 \@quotereset=\count487
- (./lit_review.aux)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 71.
+ (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./lit_review.aux)
 \openout1 = `lit_review.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-Package hyperref Info: Link coloring ON on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+Package hyperref Info: Link coloring ON on input line 71.
  (./lit_review.out) (./lit_review.out)
 \@outlinefile=\write5
 \openout5 = `lit_review.out'.
@@ -1003,27 +1042,27 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'lit_review.bbl' not found.
 
 No file lit_review.bbl.
-Package biblatex Info: Reference section=0 on input line 68.
-Package biblatex Info: Reference segment=0 on input line 68.
+Package biblatex Info: Reference section=0 on input line 71.
+Package biblatex Info: Reference segment=0 on input line 71.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
 
-Overfull \hbox (4.78767pt too wide) in paragraph at lines 79--80
-[]\OT1/cmr/m/n/10 Does more se-cure child sup-port in-come af-fect moth-ers' labour sup-ply, their re-liance on some ben-e-fits (RSA,prime
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
  []
 
-<images/logo.png, id=43, 1003.75pt x 1003.75pt>
+
+Overfull \hbox (4.78561pt too wide) in paragraph at lines 82--83
+[]\T1/lmr/m/n/10 Does more se-cure child sup-port in-come af-fect moth-ers' labour sup-ply, their re-liance on some ben-e-fits (RSA,prime
+ []
+
+<images/logo.png, id=47, 1003.75pt x 1003.75pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 83.
+Package pdftex.def Info: images/logo.png  used on input line 86.
 (pdftex.def)             Requested size: 22.75952pt x 22.76228pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1032,47 +1071,56 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.36232pt}.
 
-[1{/home/onyxia/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/home/onyxia/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/onyxia/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
- <./images/logo.png>] (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [2] [3
+ <./images/logo.png>] (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/onyxia/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [2{/home/onyxia/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 139.
+ [3
 
 
-] [4] [5] [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 1075--1076
+]
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-[9] [10] (./lit_review.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 240.
+(/home/onyxia/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [4{/home/onyxia/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/onyxia/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/onyxia/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [5] [6] [7{/home/onyxia/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1205
+
+ []
+
+[11] [12] [13] [14] (./lit_review.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
-
-
-Package rerunfilecheck Warning: File `lit_review.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `lit_review.out':
-(rerunfilecheck)             Before: 2FF62D07770AF5C29D60C4D7DF06EF64;3997
-(rerunfilecheck)             After:  49F447015A4EE93FF38533E46984B507;4729.
+Package rerunfilecheck Info: File `lit_review.out' has not changed.
+(rerunfilecheck)             Checksum: 49F447015A4EE93FF38533E46984B507;4729.
 Package logreq Info: Writing requests to 'lit_review.run.xml'.
 \openout1 = `lit_review.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33665 strings out of 468979
- 659742 string characters out of 5455257
- 1570405 words of memory out of 5000000
- 62273 multiletter control sequences out of 15000+600000
- 635791 words of font info for 66 fonts, out of 8000000 for 9000
+ 34099 strings out of 468979
+ 666333 string characters out of 5455257
+ 1570736 words of memory out of 5000000
+ 62625 multiletter control sequences out of 15000+600000
+ 691170 words of font info for 79 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  106i,14n,108p,1187b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/onyxia/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lit_review.pdf (10 pages, 260073 bytes).
+</home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></home/onyxia/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lit_review.pdf (14 pages, 334508 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 90 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
