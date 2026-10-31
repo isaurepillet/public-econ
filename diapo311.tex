@@ -1,0 +1,137 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{ensae}{RGB}{30,88,169}
+\definecolor{pale}{RGB}{239,245,253}
+\definecolor{ink}{RGB}{32,43,58}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{structure}{fg=ensae}
+\setbeamercolor{frametitle}{fg=ensae,bg=white}
+\setbeamercolor{block title}{fg=ensae,bg=pale}
+\setbeamercolor{block body}{fg=ink,bg=pale}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\color{ensae}\small$\bullet$}
+\setbeamertemplate{footline}{\hfill\scriptsize ENSAE--IP Paris / Public Economics \hspace{1cm}\insertframenumber\hspace{0.4cm}\vspace{0.25cm}}
+\setbeamertemplate{frametitle}{\vspace{0.13cm}\insertframetitle\par\vspace{0.06cm}{\color{ensae}\rule{\textwidth}{0.5pt}}}
+\newcommand{\smallnote}[1]{\vfill{\scriptsize\color{gray}#1}}
+\newcommand{\tight}{\setlength{\itemsep}{0.15cm}}
+\title{Automatic Child Support Intermediation in France}
+\subtitle{Data and Empirical Strategy -- Research Proposal}
+\author{Public Economics -- ENSAE / Institut Polytechnique de Paris}
+\date{October 2026}
+\begin{document}
+\begin{frame}[plain]
+\vspace{1.2cm}{\color{ensae}\rule{1.6cm}{2pt}}\par\vspace{0.5cm}
+{\LARGE\color{ensae}\bfseries Automatic Child Support\\[0.1cm] Intermediation in France}\par\vspace{0.45cm}
+{\large Data and Empirical Strategy}\par\vspace{0.6cm}
+Public Economics -- Research Proposal\par\vspace{0.15cm}
+ENSAE -- Institut Polytechnique de Paris\par\vspace{0.25cm}
+{\small October 2026}
+\end{frame}
+
+
+
+\begin{frame}{Data: Source, Coverage, and Sample}
+\small
+\renewcommand{\arraystretch}{1.27}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.1cm}X}
+\toprule
+Dimension & Proposed data and sample \\
+\midrule
+Source & ALLSTAT-FR6: administrative statistical files of CAF beneficiaries, produced by the French National Family Allowance Fund (CNAF); access via CASD subject to approval. \\
+Geography / period & Metropolitan France and, subject to consistent coverage, overseas territories; proposed observation window 2017--2025, with latest years subject to release and access. \\
+Unit of observation & Beneficiary/family case $\times$ month, conditional on the structure of available identifiers and files. \\
+Study population & Single-parent CAF beneficiary households with dependent children; analytical subsample with usable child support information. \\
+Main exclusions & Records without a reliable family identifier, dates or relevant child support measures; sample attrition and non-CAF households explicitly documented. \\
+Access / feasibility & Public documentation exists; research access, exact vintages, longitudinal linking and variable coverage require confirmation. \\
+\bottomrule
+\end{tabularx}
+\smallnote{Source: CASD, ALLSTAT-FR6 catalogue; sample is proposed, not yet extracted.}
+\end{frame}
+
+\begin{frame}{Data: Sample Construction and Observation Unit}
+\small
+\begin{enumerate}\setlength{\itemsep}{0.22cm}
+\item \textbf{Start from monthly CAF beneficiary records} in available ALLSTAT-FR6 vintages (target: 2017--2025).
+\item \textbf{Identify single-parent family spells} using recorded household/family composition; distinguish entry into single parenthood from first observation in CAF data.
+\item \textbf{Recover child support information} and flag observations with usable measures of pension obligations/receipts; document missing and zero values separately.
+\item \textbf{Build a longitudinal panel} using stable case/beneficiary identifiers, checking changes of allocataire, CAF transfers and family composition.
+\item \textbf{Define policy cohorts only if feasible:} date of establishment of an enforceable child support order, and type of order; otherwise no order-based treatment indicator.
+\end{enumerate}
+\vspace{0.12cm}
+\begin{block}{What does one row represent?}
+One CAF family case in month $t$, with observed family composition, child support-related fields, benefit amounts and reported resources.
+\end{block}
+\smallnote{Selection concern: CAF records do not represent all separated parents; case entry/exit may correlate with outcomes.}
+\end{frame}
+
+\begin{frame}{Data: Variables and Measurement}
+\scriptsize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{2.2cm}p{3.8cm}X}
+\toprule
+Concept & Candidate measures & Interpretation / validation needed \\
+\midrule
+Child support $Y_{it}$ & \texttt{MTPADU}, \texttt{MTALIMFO}, \texttt{MTPALIFT}, \texttt{MTALIMVE} & Verify exact dictionary labels, units, periodicity, missing/zero coding and whether amounts are due, declared, fixed or actually received. \\
+Financial security & ASF eligibility/receipt and monthly amount & ASF may compensate for unpaid/low pensions; November 2022 ASF revaluation creates a major confounder. \\
+Other resources & RSA, Prime d'activit\'e, declared household resources & Outcomes may reflect benefit formulas and reporting lags rather than immediate disposable income. \\
+Household controls & Single-parent status, number/age of children, family composition & Potential controls and sample definitions; avoid conditioning on post-treatment changes. \\
+Policy exposure $D_i$ & \texttt{NATJUG} (candidate), order date/type if present & \texttt{NATJUG} alone must \emph{not} be assumed to identify IFPA participation or an order date. \\
+Timing & Monthly observation; dates of family changes and orders if available & Distinguish administrative recording date, separation date, order date and IFPA start. \\
+\bottomrule
+\end{tabularx}
+\smallnote{Candidate ALLSTAT variables identified in preliminary dictionary review; operational definitions remain to be validated.}
+\end{frame}
+
+\begin{frame}{Data: Policy Exposure and Measurement Challenges}
+\small
+\begin{block}{Institutional variation}
+\textbf{March 2022:} automatic intermediation for newly fixed child support in judicial divorce proceedings.\par
+\textbf{January 2023:} extension to other relevant enforceable titles. Existing orders are not automatically equivalent to new orders under these rules.
+\end{block}
+\vspace{0.15cm}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\toprule
+Needed for causal design & Status in ALLSTAT \\
+\midrule
+Exact order date & Not established; first observed pension is \emph{not} necessarily a newly issued order. \\
+Type of enforceable title & \texttt{NATJUG} may help, but meaning and coverage require checking. \\
+Actual IFPA enrollment & No confirmed direct indicator in currently reviewed variables. \\
+Actual monthly payments & Must establish whether recorded pension amounts measure payments or declarations. \\
+\bottomrule
+\end{tabularx}
+\smallnote{Main distinction: policy eligibility, actual IFPA participation and observed child support receipts are not interchangeable.}
+\end{frame}
+
+\begin{frame}{Methodology: Source of Identification}
+
+\end{frame}
+
+\begin{frame}{Methodology: Equation and Estimand}
+
+\end{frame}
+
+\begin{frame}{Methodology: Assumptions, Threats, and Feasibility}
+
+\end{frame}
+
+\begin{frame}{References and Data Documentation}
+\small
+\begin{itemize}\setlength{\itemsep}{0.32cm}
+\item \textbf{CASD:} ALLSTAT-FR6, \emph{Fichier statistique des allocataires des CAF -- donn\'ees d\'efinitives}. \url{https://www.casd.eu/source/fichier-statistique-des-allocataires-des-caf-donnees-definitives/}
+\item \textbf{CNAF (2024):} \emph{\'Evaluation du dispositif d'interm\'ediation financi\`ere des pensions alimentaires en phase de g\'en\'eralisation}, Dossier d'\'etude no. 233.
+\item \textbf{CNAF / DREES (2025):} statistical analysis of the November 2022 ASF revaluation (ALLSTAT-FR6).
+\item \textbf{Rubolino, E.:} \emph{Outlining Data and Methodology}, Public Economics, ENSAE--IP Paris (course slides).
+\end{itemize}
+\vspace{0.4cm}
+\begin{block}{Status}
+Proposed research design based on public data documentation; no access to individual ALLSTAT records or validated causal sample is claimed.
+\end{block}
+\end{frame}
+\end{document}
