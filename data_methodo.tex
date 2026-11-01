@@ -1,0 +1,754 @@
+
+\documentclass[11pt,a4paper]{article}
+
+% Encodage
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Mise en page
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+% Tableaux
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{array}
+
+% Liens
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue]{hyperref}
+
+% Titre
+\title{\textbf{Évaluation de l'intermédiation financière
+des pensions alimentaires}\\[0.3cm]
+\large Données administratives de la CNAF
+et faisabilité empirique}
+
+\author{}
+\date{\today}
+
+\begin{document}
+
+
+\maketitle
+
+\section{Évaluation de l'intermédiation financière
+des pensions alimentaires : données disponibles
+et faisabilité }
+
+
+\subsection{Présentation de la base ALLSTAT}
+
+\subsubsection{Source et couverture}
+
+ALLSTAT est une base statistique administrative
+constituée à partir des fichiers de gestion des
+allocataires des caisses d'allocations familiales CAF.
+Elle contient des informations relatives à la
+composition des foyers, aux ressources prises en
+compte dans le calcul des prestations sociales,
+aux droits ouverts et aux montants des prestations.
+
+Les fichiers ALLSTAT-FR6 sont référencés dans
+le CASD et vont de 2017 à 2025 ie couverture temporelle  adaptée à notre projet, puisqu'elle permet d'envisager l'observation
+des allocataires avant et après les deux principales
+dates de généralisation de l'IFPA, en mars 2022
+et janvier 2023.
+
+L'unité d'observation envisagée est le dossier
+d'allocataire à une date de référence donnée.
+Cette unité ne correspond toutefois pas
+nécessairement à un parent, à un couple séparé
+ou à une obligation alimentaire.
+
+\medskip
+
+\noindent
+\textbf{Documentation :}
+
+\begin{itemize}
+    \item Catalogue CASD :
+    \url{https://www.casd.eu/source/fichier-statistique-des-allocataires-des-caf-donnees-definitives/}
+
+    \item Documentation ALLSTAT :
+    \url{https://utilcnaf.site.ined.fr/fr/fichiers/allstat}
+\end{itemize}
+
+\subsubsection{Population étudiée}
+
+La population d'intérêt serait constituée
+des parents séparés ayant au moins un enfant
+à charge et concernés par une obligation
+de pension alimentaire. Dans ALLSTAT, une première approche consisterait à identifier les foyers
+monoparentaux à partir des variables
+de situation familiale et de composition
+du ménage.
+
+Cependant, l'observation d'un foyer
+monoparental ne garantit pas l'existence
+d'une pension alimentaire fixée par
+un titre exécutoire. Inversement, certains parents séparés
+peuvent ne pas être présents dans les
+fichiers CAF ou ne pas être identifiables
+comme bénéficiaires d'une pension.
+
+L'échantillon effectivement observable
+pourrait donc différer de la population
+des parents concernés par la réforme.
+
+\subsection{Variables pertinentes pour le projet}
+
+L'examen du dictionnaire des variables
+ALLSTAT fait apparaître plusieurs
+informations directement utiles
+à notre question de recherche.
+
+\subsubsection{Pensions alimentaires}
+
+\begin{table}[H]
+\centering
+\caption{Variables relatives aux pensions alimentaires}
+\small
+\begin{tabular}{p{2.4cm}p{10.6cm}}
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\texttt{MTPADU} &
+Montant des pensions alimentaires dues. \\
+
+\texttt{MTALIMFO} &
+Montant des pensions alimentaires reçues
+par le foyer. \\
+
+\texttt{MTALIMME} &
+Montant des pensions alimentaires reçues
+par la femme. \\
+
+\texttt{MTALIMMO} &
+Montant des pensions alimentaires reçues
+par l'homme. \\
+
+\texttt{MTALIMVE} &
+Montant des pensions alimentaires versées
+par le foyer. \\
+
+\texttt{MTPALIFT} &
+Montant des pensions alimentaires reçues
+par le foyer pour le trimestre. \\
+
+\texttt{MTPALIME} &
+Montant trimestriel des pensions alimentaires
+reçues par la femme. \\
+
+\texttt{TPA} &
+Indicateur de pension alimentaire. \\
+
+\texttt{NBDEBPEN} &
+Nombre de personnes débitrices au titre
+de l'allocation de soutien familial. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La présence de ces variables est
+particulièrement intéressante.
+
+Elle indique que les fichiers statistiques
+de la CNAF contiennent non seulement
+des informations sur les prestations
+sociales, mais également sur les
+pensions alimentaires dues et reçues.
+
+En particulier, la variable
+\texttt{MTPADU} pourrait fournir
+une mesure des obligations alimentaires,
+tandis que les variables
+\texttt{MTALIMFO} et
+\texttt{MTPALIFT} pourraient renseigner
+les ressources déclarées au titre
+des pensions alimentaires.
+
+Toutefois, leur interprétation
+nécessite plusieurs vérifications.
+
+Premièrement, il convient de déterminer
+si les montants enregistrés correspondent
+aux versements effectivement réalisés
+ou aux ressources déclarées pour
+le calcul des prestations.
+
+Deuxièmement, les périodes de référence
+peuvent différer : certaines variables
+portent explicitement sur un trimestre,
+tandis que d'autres ne précisent
+pas leur périodicité dans le dictionnaire.
+
+Enfin, rien ne garantit à ce stade
+que les pensions dues et reçues
+correspondent à une même obligation
+alimentaire.
+
+Il serait donc prématuré de calculer
+directement un taux d'impayés
+à partir de la différence entre
+\texttt{MTPADU} et
+\texttt{MTALIMFO}.
+
+\subsubsection{Allocation de soutien familial}
+
+L'allocation de soutien familial (ASF)
+constitue un résultat particulièrement
+pertinent pour notre étude.
+
+Elle peut notamment intervenir
+lorsqu'une pension alimentaire
+est absente, insuffisante
+ou impayée, selon les conditions
+prévues par la réglementation.
+
+\begin{table}[H]
+\centering
+\caption{Variables relatives à l'ASF}
+\small
+\begin{tabular}{p{2.4cm}p{10.6cm}}
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\texttt{ASFVERS} &
+Allocation de soutien familial versable. \\
+
+\texttt{ASFCOMPL} &
+ASF complémentaire versable. \\
+
+\texttt{MTASFVER} &
+Montant de l'ASF versable. \\
+
+\texttt{MTASFCPL} &
+Montant de l'ASF complémentaire versable. \\
+
+\texttt{EASFV1} &
+Indicateur d'ASF versable pour
+le premier enfant du dossier. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ces variables permettraient
+potentiellement de mesurer
+l'évolution du recours à l'ASF
+et des montants de droits
+associés à cette prestation.
+
+L'interprétation doit néanmoins
+tenir compte de la distinction
+entre les montants versables
+et les sommes effectivement payées.
+
+Par ailleurs, l'ASF a fait
+l'objet d'une revalorisation
+importante en novembre 2022.
+
+Cette modification intervient
+entre les deux étapes de
+généralisation de l'IFPA
+et constitue donc une réforme
+concomitante à prendre en compte.
+
+\subsubsection{Autres prestations sociales}
+
+La base contient également
+des informations permettant
+d'étudier les conséquences
+de la réforme sur les prestations
+sous condition de ressources.
+
+\begin{table}[H]
+\centering
+\caption{Variables relatives aux prestations sociales}
+\small
+\begin{tabular}{p{2.4cm}p{10.6cm}}
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\texttt{RSAVERS} &
+Revenu de solidarité active versable. \\
+
+\texttt{MTRSAVER} &
+Montant du RSA versable. \\
+
+\texttt{PPAVERS} &
+Prime d'activité versable. \\
+
+\texttt{MTPPAVER} &
+Montant de la prime d'activité versable. \\
+
+\texttt{MTPRESVE} &
+Montant total des prestations versées. \\
+
+\texttt{MTPFVERS} &
+Montant des prestations familiales versées. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ces informations sont utiles
+pour examiner les conséquences
+indirectes de l'amélioration
+éventuelle du recouvrement.
+
+Une augmentation des pensions
+alimentaires effectivement perçues
+peut modifier les ressources
+prises en compte dans le calcul
+de certaines prestations.
+
+L'effet sur le revenu disponible
+des parents créanciers peut donc
+différer de l'augmentation brute
+des pensions reçues.
+
+\subsubsection{Revenus et activité professionnelle}
+
+\begin{table}[H]
+\centering
+\caption{Variables relatives aux revenus et à l'activité}
+\small
+\begin{tabular}{p{2.4cm}p{10.6cm}}
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\texttt{MTRNIFOY} &
+Revenu net imposable du foyer. \\
+
+\texttt{MTREVBRU} &
+Revenus bruts du foyer. \\
+
+\texttt{MTREVACT} &
+Revenus d'activité du foyer. \\
+
+\texttt{REVACTME} &
+Revenus d'activité de la femme. \\
+
+\texttt{REVACTMO} &
+Revenus d'activité de l'homme. \\
+
+\texttt{ACTRESPD} &
+Activité du responsable de dossier. \\
+
+\texttt{ACTCONJ} &
+Activité du conjoint. \\
+
+\texttt{RUC} &
+Revenu par unité de consommation. \\
+
+\texttt{NBUC} &
+Nombre d'unités de consommation. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ces variables pourraient permettre
+d'analyser l'évolution des ressources
+et de certaines dimensions
+de l'activité professionnelle
+des parents créanciers.
+
+Il convient néanmoins de vérifier
+les périodes de référence
+et les modalités de déclaration
+des revenus.
+
+De plus, les données d'un dossier
+CAF ne permettent pas nécessairement
+d'observer les revenus du parent
+débiteur résidant dans un autre foyer.
+
+L'analyse des réponses
+comportementales des débiteurs
+pourrait donc nécessiter
+un appariement avec d'autres
+sources administratives.
+
+\subsubsection{Situation familiale et caractéristiques individuelles}
+
+\begin{table}[H]
+\centering
+\caption{Variables de composition familiale et de suivi}
+\small
+\begin{tabular}{p{2.4cm}p{10.6cm}}
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\texttt{SITFAM} &
+Situation familiale retenue
+pour le calcul des droits. \\
+
+\texttt{PRESCONJ} &
+Présence d'un conjoint. \\
+
+\texttt{SEXE} &
+Sexe du responsable de dossier. \\
+
+\texttt{DTNAIRES} &
+Date de naissance du responsable
+de dossier. \\
+
+\texttt{NBENLEFA} &
+Nombre d'enfants à charge
+au sens de la législation familiale. \\
+
+\texttt{NUMCOMDO} &
+Code de la commune du dossier. \\
+
+\texttt{IDANORES} &
+NIR anonymisé du responsable
+de dossier. \\
+
+\texttt{APPAPAN} &
+Indicateur d'appartenance
+au panel. \\
+
+\texttt{NBMSIFAM} &
+Nombre de mois depuis la dernière
+modification de la situation familiale. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ces variables permettraient
+de définir des sous-populations
+et de construire des contrôles
+démographiques et géographiques.
+
+Les identifiants anonymisés
+pourraient également faciliter
+certaines analyses longitudinales,
+sous réserve de leur stabilité
+et des conditions d'accès.
+
+Toutefois, l'existence
+d'un identifiant anonymisé
+ne garantit pas qu'il soit
+possible d'apparier directement
+les dossiers des deux parents
+après leur séparation.
+
+\subsubsection{Informations juridiques}
+
+Une variable mérite une attention
+particulière :
+
+\begin{itemize}
+    \item \texttt{NATJUG} :
+    nature de la décision de justice
+    assignant un parent défaillant
+    au versement d'une créance alimentaire.
+\end{itemize}
+
+Cette variable pourrait
+potentiellement apporter
+une information sur le
+fondement juridique de
+l'obligation alimentaire.
+
+Cependant, son intitulé
+ne permet pas d'affirmer
+qu'elle distingue les divorces
+judiciaires des autres
+formes de séparation.
+
+Or cette distinction
+est indispensable pour
+la stratégie d'identification
+envisagée.
+
+De même, le dictionnaire
+ne permet pas d'identifier
+clairement la date exacte
+de fixation de la pension.
+
+Ces informations devront
+donc être recherchées
+dans la documentation détaillée
+ou dans d'autres fichiers
+administratifs.
+
+\subsection{Utilisation de données CNAF dans la recherche}
+
+L'utilisation de données
+administratives de la CNAF
+pour l'évaluation des politiques
+publiques est déjà documentée
+dans la littérature appliquée.
+
+Un exemple particulièrement
+pertinent est l'évaluation
+de la réforme de 2019
+de la prime d'activité
+réalisée par l'Institut
+des politiques publiques (IPP).
+
+Cette étude mobilise
+les fichiers ALLSTAT-FR6
+pour la période 2017--2020
+et construit un panel
+longitudinal d'allocataires.
+
+Elle montre qu'il est
+possible d'utiliser
+ces fichiers pour analyser
+l'évolution des prestations
+et des ressources des foyers.
+
+Les auteurs soulignent
+néanmoins plusieurs
+difficultés de suivi,
+notamment lorsque les
+identifiants administratifs
+changent à la suite
+de modifications de
+la situation familiale
+ou de changements de CAF.
+
+Ces limites sont
+particulièrement importantes
+dans notre cas, puisque
+la séparation des parents
+constitue précisément
+l'événement à partir duquel
+l'exposition à la réforme
+est déterminée.
+
+\medskip
+
+\noindent
+\textbf{Référence :}
+
+Bozio et al. (2023),
+\emph{La réforme de 2019 de la prime
+d'activité : analyse sur la possibilité
+de mesurer les effets sur l'emploi},
+Institut des politiques publiques
+et France Stratégie.
+
+\medskip
+
+\noindent
+\url{https://www.strategie-plan.gouv.fr/files/files/Actualites/2023-10-30%20-%20Rapport%20IPP%20-%20La%20r%C3%A9forme%20de%202019%20de%20la%20prime%20d%E2%80%99activit%C3%A9/ipp_-_reforme_2019_prime_dactivite_-_octobre_2023_v3.pdf}
+
+\subsection{Limites et difficultés d'identification}
+
+L'examen du dictionnaire ALLSTAT
+permet d'identifier plusieurs
+limites pour notre projet.
+
+\paragraph{Mesure des impayés}
+
+Les variables relatives aux
+pensions alimentaires ne
+permettent pas encore de
+reconstituer avec certitude
+les versements mensuels
+effectivement réalisés.
+
+Il faudra déterminer
+si les montants enregistrés
+correspondent à des
+ressources déclarées,
+à des obligations théoriques
+ou à des paiements constatés.
+
+\paragraph{Identification du traitement}
+
+Aucune variable explicitement
+identifiée comme indicateur
+d'intermédiation financière
+effective ou d'éligibilité
+à l'IFPA n'apparaît
+dans le dictionnaire transmis.
+
+Il reste donc nécessaire
+de vérifier si cette
+information existe
+dans un autre fichier CNAF
+ou dans les données ARIPA.
+
+\paragraph{Dates et catégories de séparation}
+
+La stratégie économétrique
+envisagée exploite
+les différences de calendrier
+de la réforme selon
+les procédures de séparation.
+
+Elle nécessite donc
+d'observer précisément
+la date et la nature
+du titre fixant
+la pension alimentaire.
+
+Ces informations ne
+sont pas clairement
+identifiées dans
+le dictionnaire ALLSTAT.
+
+\paragraph{Construction du groupe de contrôle}
+
+L'analyse suppose
+de comparer des parents
+soumis à l'intermédiation
+automatique à des parents
+relevant encore
+du régime antérieur.
+
+Il est donc indispensable
+de disposer d'informations
+sur les obligations
+non intermédiées.
+
+Une base limitée
+aux seuls dossiers
+effectivement pris
+en charge par l'ARIPA
+ne suffirait pas
+à constituer un groupe
+de contrôle complet.
+
+\paragraph{Appariement et suivi longitudinal}
+
+Le suivi des familles
+après une séparation
+peut être compliqué
+par la création ou
+la modification de
+dossiers administratifs.
+
+Par ailleurs,
+l'appariement entre
+les parents débiteurs
+et créanciers
+n'est pas garanti
+par les identifiants
+présents dans ALLSTAT.
+
+\paragraph{Accès aux données}
+
+Les fichiers ALLSTAT
+sont des microdonnées
+administratives protégées.
+
+Leur utilisation
+dans le cadre
+d'un projet de recherche
+nécessite une procédure
+d'accès adaptée.
+
+La possibilité
+d'obtenir les variables
+nécessaires ainsi que
+des appariements
+avec les données ARIPA
+ou judiciaires reste
+à confirmer.
+
+\subsection{Conclusion et prochaines vérifications}
+
+L'examen du dictionnaire
+ALLSTAT constitue
+une première étape
+encourageante pour
+la faisabilité empirique
+du projet.
+
+La base contient
+des informations
+sur les pensions
+alimentaires dues
+et reçues,
+les prestations sociales,
+les ressources des foyers
+et leur composition.
+
+Elle paraît donc
+particulièrement pertinente
+pour analyser
+les conséquences
+économiques de la réforme
+sur les parents créanciers.
+
+Cependant, elle ne
+permet pas encore
+de garantir la mesure
+des impayés effectifs
+ni l'identification
+des parents concernés
+par les différentes
+étapes de la réforme.
+
+Trois vérifications
+apparaissent prioritaires :
+
+\begin{enumerate}
+    \item Déterminer la définition
+    et la période de référence
+    des variables
+    \texttt{MTPADU},
+    \texttt{MTALIMFO},
+    \texttt{MTPALIFT}
+    et \texttt{TPA}.
+
+    \item Vérifier si les
+    données CNAF ou ARIPA
+    permettent d'identifier
+    la date de fixation
+    de la pension,
+    le type de procédure
+    et le statut IFPA.
+
+    \item Étudier les possibilités
+    d'appariement entre
+    les dossiers CAF,
+    les données ARIPA
+    et les données fiscales,
+    afin d'observer
+    les deux parents
+    et leurs ressources.
+\end{enumerate}
+
+En définitive, ALLSTAT
+offre une source
+administrative prometteuse,
+mais la mise en œuvre
+de la stratégie
+d'identification proposée
+dépendra principalement
+de la disponibilité
+d'informations individuelles
+sur les obligations
+alimentaires,
+les paiements effectifs
+et les dates d'exposition
+à la réforme.
+
+
+!!! il nous manque le type et la date de la séparation (données de l'ARIPA ???)
+
+
+\section{Méthodologie}
+
+Les années disponibles sur le CASD (ALLSTAT FR6) couvrent la période 2017-2025. 
+Pour étudier l'effet de l'intermédiation financière, 
+il faut se concentrer sur les années 2022 et 2023, 
+où l'IFPA devient automatique pour les divorces puis pour toutes les autres séparations.
+Avant l'ifpa existait mais seulement sur demande.
+\begin{itemize}
+    \item  seuil 2022 : divorces judiciaires sont \textit{traités},
+les autres séparations servent de contrôle
+\item seuil 2023 : les autres séparations sont traitées, les divorces judiciaires (déjà traités)
+ servent de contrôle.
+
+ 
+
+\end{itemize}
+\end{document}
