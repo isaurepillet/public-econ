@@ -748,7 +748,21 @@ les autres séparations servent de contrôle
 \item seuil 2023 : les autres séparations sont traitées, les divorces judiciaires (déjà traités)
  servent de contrôle.
 
- 
-
 \end{itemize}
+
+Design : différence en discontinuité sur les "cohortes" de séparation
+\begin{itemize}
+    \item on voudrait la date du jugement MAIS on a le mois de la séparation. Comment ? on prend le
+    mois de référence du fichier moins NBMSIFAM (mois écoulés depuis 
+    le dernier changement de situation familiale)
+    \item on voudrait le type de procédure MAIS on a la situation avant la séparation. Comment ?
+     en suivant le dossier dans le temps (IDANORES, panel), 
+    SITFAM indique si le parent était marié ou en concubinage ou pacsé
+\end{itemize}
+
+
+ECLAIRCIR ETATIMPA (état de l'impayé) et DTETIMPA (date de l'impayé) dans le dictionnaire
+des variables.
+Pour l'instant, ce n'est pas vraiment réalisable.
+
 \end{document}
