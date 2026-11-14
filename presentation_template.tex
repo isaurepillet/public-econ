@@ -1,0 +1,230 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% ============================================================
+% Packages
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% ============================================================
+% Colours (same as the written proposal)
+% ============================================================
+\definecolor{boxframe}{RGB}{150,58,78}
+\definecolor{boxback}{RGB}{248,238,239}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{textgrey}{RGB}{110,110,110}
+
+% ============================================================
+% Beamer look
+% ============================================================
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{frametitle}{fg=boxframe}
+\setbeamerfont{frametitle}{series=\bfseries, size=\Large}
+\setbeamercolor{structure}{fg=boxframe}
+\setbeamertemplate{itemize item}{\color{boxframe}--}
+\setbeamertemplate{itemize subitem}{\color{boxframe}\textbullet}
+\setbeamertemplate{enumerate item}{\color{boxframe}\insertenumlabel.}
+
+% Header: frame title with a coloured rule underneath
+\setbeamertemplate{frametitle}{%
+  \vspace{0.4cm}%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par}
+  \vspace{0.1cm}
+  {\color{boxframe}\rule{\linewidth}{0.6pt}}
+}
+
+% Footer: course | title | page
+\setbeamertemplate{footline}{%
+  \hspace{0.4cm}{\scriptsize\color{textgrey}ENSAE -- IP Paris \;|\; Public Economics \;|\; \insertshorttitle}
+  \hfill
+  {\scriptsize\color{textgrey}\insertframenumber/\inserttotalframenumber}\hspace{0.4cm}
+  \vspace{0.25cm}
+}
+
+% ============================================================
+% Helpers
+% ============================================================
+% Grey placeholder text, to replace with content
+\newcommand{\placeholder}[1]{{\color{textgrey}\itshape #1}}
+% Coloured box, same style as the written proposal
+\newtcolorbox{keybox}[1][]{%
+  colback=boxback, colframe=boxframe, boxrule=0.6pt, arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt,
+  fonttitle=\bfseries\small, title=#1
+}
+
+% Section label inside a slide
+\newcommand{\blocklabel}[1]{\vspace{0.15cm}{\color{boxframe}\textbf{#1}}\par\vspace{0.05cm}}
+
+% ============================================================
+% Title information
+% ============================================================
+\title[\placeholder{Short title}]{\placeholder{Who pays when fathers don't?}}
+\subtitle{\placeholder{Default intermediation of child support in France}}
+\author{\placeholder{Eve Samani}, \placeholder{Isaure Pillet}, \placeholder{Antony Albergne}, \placeholder{Lucie Lang}}
+\institute{Public Economics -- Enrico Rubolino \\ ENSAE -- IP Paris, 3A}
+\date{Fall 2026}
+
+% Title page layout
+\setbeamertemplate{title page}{%
+  \vfill
+  \begin{center}
+    {\color{boxframe}\rule{0.7\linewidth}{0.6pt}}\par
+    \vspace{0.4cm}
+    {\usebeamercolor[fg]{frametitle}\Huge\bfseries\inserttitle\par}
+    \vspace{0.25cm}
+    {\large\color{textgrey}\insertsubtitle\par}
+    \vspace{0.4cm}
+    {\color{boxframe}\rule{0.7\linewidth}{0.6pt}}\par
+    \vspace{0.6cm}
+    {\normalsize\insertauthor\par}
+    \vspace{0.3cm}
+    {\small\color{textgrey}\insertinstitute\par}
+    \vspace{0.2cm}
+    {\small\color{textgrey}\insertdate\par}
+  \end{center}
+  \vfill
+}
+
+\begin{document}
+
+% ============================================================
+% TITLE SLIDE (no footer, not counted in the slide numbers)
+% ============================================================
+\begin{frame}[plain, noframenumbering]
+  \titlepage
+\end{frame}
+
+
+% ============================================================
+% SLIDE 1 -- Motivation and Literature
+% ============================================================
+\begin{frame}{Motivation and Literature}
+
+\begin{columns}[T]
+
+  % ---------- Left column: motivation ----------
+  \begin{column}{0.48\textwidth}
+    \blocklabel{Motivation}
+    \begin{itemize}
+      \item \placeholder{Key fact 1}
+      \item \placeholder{Key fact 2}
+      \item \placeholder{Policy context / reform}
+    \end{itemize}
+
+    \vspace{0.2cm}
+    \begin{keybox}[Research question]
+      \small \placeholder{One-sentence research question}
+    \end{keybox}
+  \end{column}
+
+  % ---------- Right column: literature ----------
+  \begin{column}{0.48\textwidth}
+    \blocklabel{Related literature}
+    \begin{itemize}
+      \item \textbf{\placeholder{Strand 1}}: \placeholder{Authors (year)}
+      \item \textbf{\placeholder{Strand 2}}: \placeholder{Authors (year)}
+      \item \textbf{\placeholder{Strand 3}}: \placeholder{Authors (year)}
+    \end{itemize}
+
+    \vspace{0.2cm}
+    \begin{keybox}[Our contribution]
+      \small \placeholder{Gap in the literature and what we add}
+    \end{keybox}
+  \end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+% ============================================================
+% SLIDE 2 -- Data and Methodology
+% ============================================================
+\begin{frame}{Data and Methodology}
+
+\begin{columns}[T]
+
+  % ---------- Left column: data ----------
+  \begin{column}{0.46\textwidth}
+    \blocklabel{Data}
+    \begin{itemize}
+      \item \textbf{Source}: \placeholder{dataset, producer, access}
+      \item \textbf{Population}: \placeholder{who, where, years}
+      \item \textbf{Unit}: \placeholder{unit of observation}
+      \item \textbf{Outcomes $Y$}: \placeholder{main outcomes}
+      \item \textbf{Treatment $D$}: \placeholder{how exposure is measured}
+      \item \textbf{Limitation}: \placeholder{main data limitation}
+    \end{itemize}
+  \end{column}
+
+  % ---------- Right column: methodology ----------
+  \begin{column}{0.50\textwidth}
+    \blocklabel{Methodology}
+    \placeholder{Design: policy variation, treated vs.\ control}
+
+    \vspace{0.15cm}
+    \begin{keybox}[Specification]
+      \small
+      \[
+        Y_{it} = \alpha_i + \lambda_t + \beta \, D_{it} + X_{it}'\gamma + \varepsilon_{it}
+      \]
+      \placeholder{Definition of $\beta$ and of the estimand}
+    \end{keybox}
+
+    \begin{itemize}
+      \item \textbf{Assumption}: \placeholder{identifying assumption}
+      \item \textbf{Threat}: \placeholder{main threat}
+      \item \textbf{Check}: \placeholder{test / robustness}
+    \end{itemize}
+  \end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+% ============================================================
+% SLIDE 3 -- Expected Results
+% ============================================================
+\begin{frame}{Expected Results}
+
+\blocklabel{Hypotheses}
+\begin{center}
+\small
+\begin{tabular}{lcl}
+  \toprule
+  \textbf{Outcome} & \textbf{Expected sign} & \textbf{Mechanism} \\
+  \midrule
+  \placeholder{Outcome 1} & \placeholder{$+$ / $-$ / ?} & \placeholder{Why} \\
+  \placeholder{Outcome 2} & \placeholder{$+$ / $-$ / ?} & \placeholder{Why} \\
+  \placeholder{Outcome 3} & \placeholder{$+$ / $-$ / ?} & \placeholder{Why} \\
+  \placeholder{Outcome 4} & \placeholder{$+$ / $-$ / ?} & \placeholder{Why} \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \begin{keybox}[Heterogeneity]
+      \small \placeholder{Groups for which effects should differ}
+    \end{keybox}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \begin{keybox}[Policy relevance]
+      \small \placeholder{What the results would mean for policy}
+    \end{keybox}
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+\end{document}
