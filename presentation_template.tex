@@ -9,6 +9,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{ragged2e}
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
 
@@ -60,7 +61,6 @@
   fonttitle=\bfseries\small, title=#1
 }
 
-% Section label inside a slide
 \newcommand{\blocklabel}[1]{\vspace{0.15cm}{\color{boxframe}\textbf{#1}}\par\vspace{0.05cm}}
 
 % ============================================================
@@ -103,45 +103,122 @@
 \end{frame}
 
 
+
+% ============================================================
+% SLIDE 1 -- Motivation and Literature
+% ============================================================
+
 % ============================================================
 % SLIDE 1 -- Motivation and Literature
 % ============================================================
 \begin{frame}{Motivation and Literature}
 
-\begin{columns}[T]
+\begin{columns}[T,onlytextwidth]
 
-  % ---------- Left column: motivation ----------
+% ============================================================
+% LEFT COLUMN -- MOTIVATION
+% ============================================================
+\begin{column}{0.48\textwidth}
+
+  \blocklabel{Motivation}
+  \footnotesize
+
+  \begin{itemize}
+    \setlength{\itemsep}{0.09cm}
+    \setlength{\topsep}{0pt}
+    \justifying
+
+    \item \textbf{Gender inequality and poverty:}
+    \textbf{\textcolor{boxframe}{85\%}} of single
+    parents are women; \textbf{\textcolor{boxframe}{31.4\%}}
+    of single-parent households lived in poverty
+    in 2022.
+
+    \item \textbf{Unreliable child support:}
+    Child support accounts for
+    \textbf{\textcolor{boxframe}{18\%}} of
+    single-parent families' resources, yet
+    \textbf{\textcolor{boxframe}{30--40\%}} of
+    payments were fully or partially unpaid.
+
+    \item \textbf{Policy reform:}
+    France shifted from ex-post recovery to
+    \textbf{automatic public intermediation}
+    (March 2022; January 2023).
+
+  \end{itemize}
+
+  \vspace{0.03cm}
+  {\tiny\color{textgrey}
+  Sources: CNAF (2023); INSEE (2024);
+  Ministry of Justice (2022).}
+
+\end{column}
+
+
+% ============================================================
+% RIGHT COLUMN -- RELATED LITERATURE
+% ============================================================
+\begin{column}{0.48\textwidth}
+
+  \blocklabel{Related literature}
+  \footnotesize
+
+  \begin{itemize}
+    \setlength{\itemsep}{0.09cm}
+    \setlength{\topsep}{0pt}
+    \justifying
+
+    \item \textbf{Why defaults occur ?}:
+    Weiss \& Willis (1993);
+    Chiappori \& Weiss (2007);
+    Garfinkel \& Klawitter (1990);
+    Freeman \& Waldfogel (2001))
+
+    \item \textbf{Behavioral Parental Responses}:
+    Bonnet\& al. (2021);
+    \textit{(creditors)};
+    Rossin-Slater \& Wüst (2018);
+    Cancian \& al. (2013)
+    \textit{(debtors)}.
+
+    \item \textbf{French IFPA Evaluations}:
+    Titli et al.\ (CNAF, 2024);
+    HCFEA (2025)
+
+  \end{itemize}
+
+\end{column}
+
+\end{columns}
+
+% ============================================================
+% BOTTOM BOXES -- ALIGNED HORIZONTALLY
+% ============================================================
+\vspace{-0.25cm}
+
+\begin{columns}[T,onlytextwidth]
+
   \begin{column}{0.48\textwidth}
-    \blocklabel{Motivation}
-    \begin{itemize}
-      \item \placeholder{Key fact 1}
-      \item \placeholder{Key fact 2}
-      \item \placeholder{Policy context / reform}
-    \end{itemize}
-
-    \vspace{0.2cm}
     \begin{keybox}[Research question]
-      \small \placeholder{One-sentence research question}
+      \footnotesize
+      How does automatic intermediation affect
+      child support payments and parents'
+      economic outcomes?
     \end{keybox}
   \end{column}
 
-  % ---------- Right column: literature ----------
-\begin{column}{0.48\textwidth}
-    \blocklabel{Related literature}
-    \begin{itemize}
-        \item \textbf{Why defaults occur ?}: Weiss \& Willis (1993); Chiappori \& Weiss (2007) ; Garfinkel \& Klawitter (1990); Freeman \& Waldfogel (2001))
-        \item \textbf{Behavioral Parental Responses}: Bonnet\& al. (2021); \textit{(creditors)}; Rossin-Slater \& Wüst (2018); Cancian \& al. (2013) \textit{(debtors)}.
-        \item \textbf{French IFPA Evaluations}: Titli et al.\ (CNAF, 2024); HCFEA (2025)    \end{itemize}
-
-    \vspace{0.2cm}
+  \begin{column}{0.48\textwidth}
     \begin{keybox}[Our contribution]
-      \small \placeholder{First causal evaluation of France's IFPA}
+      \footnotesize
+      First causal evaluation of France's IFPA
     \end{keybox}
   \end{column}
 
 \end{columns}
 
 \end{frame}
+
 
 
 % ============================================================
