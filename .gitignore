@@ -9,4 +9,7 @@
 *.run.xml
 *.synctex.gz
 *.toc
-*-SAVE-ERROR
+*-SAVE-ERROR*
+*.nav
+*.snm
+*.vrb

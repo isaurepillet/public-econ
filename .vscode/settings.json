@@ -1,0 +1,20 @@
+{
+  // Delete LaTeX auxiliary files after every successful build
+  "latex-workshop.latex.autoClean.run": "onSucceeded",
+  // *.synctex.gz is deliberately kept: it powers PDF <-> source click navigation
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.bcf",
+    "*.blg",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.log",
+    "*.nav",
+    "*.out",
+    "*.run.xml",
+    "*.snm",
+    "*.toc",
+    "*.vrb"
+  ]
+}

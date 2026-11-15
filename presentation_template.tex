@@ -11,7 +11,24 @@
 \usepackage{graphicx}
 \usepackage{ragged2e}
 \usepackage{tcolorbox}
-\tcbuselibrary{skins}
+% \tcbuselibrary{skins} % requires tikzfill (missing from TeX Live basic)
+\usetikzlibrary{arrows.meta}
+\usepackage[style=authoryear, backend=biber, maxcitenames=2, maxbibnames=99, uniquename=false, uniquelist=false]{biblatex}
+\addbibresource{references.bib}
+\usepackage{multicol}
+\setbeamertemplate{bibliography item}{}
+\ExecuteBibliographyOptions{giveninits=true, isbn=false, url=false, doi=false}
+\DeclareNameAlias{default}{family-given}
+\DeclareNameAlias{sortname}{family-given}
+\renewcommand*{\bibfont}{\scriptsize}
+\setlength{\bibitemsep}{2pt}
+\renewbibmacro{in:}{}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+% References not yet in references.bib are shown in red
+\newcommand{\missingref}[1]{\textcolor{red}{#1}}
 
 % ============================================================
 % Colours (same as the written proposal)
@@ -26,6 +43,7 @@
 % ============================================================
 \usetheme{default}
 \setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=0.6cm, text margin right=0.6cm}
 \setbeamercolor{frametitle}{fg=boxframe}
 \setbeamerfont{frametitle}{series=\bfseries, size=\Large}
 \setbeamercolor{structure}{fg=boxframe}
@@ -58,7 +76,7 @@
 \newtcolorbox{keybox}[1][]{%
   colback=boxback, colframe=boxframe, boxrule=0.6pt, arc=2pt,
   left=4pt, right=4pt, top=2pt, bottom=2pt,
-  fonttitle=\bfseries\small, title=#1
+  fonttitle=\bfseries\small, title={#1}
 }
 
 \newcommand{\blocklabel}[1]{\vspace{0.15cm}{\color{boxframe}\textbf{#1}}\par\vspace{0.05cm}}
@@ -172,21 +190,21 @@
     \justifying
 
     \item \textbf{Why defaults occur ?}:
-    Weiss \& Willis (1993);
-    Chiappori \& Weiss (2007);
-    Garfinkel \& Klawitter (1990);
-    Freeman \& Waldfogel (2001))
+    \textcite{weiss1993transfers};
+    \textcite{chiappori2007divorce};
+    \missingref{Garfinkel \& Klawitter (1990)};
+    \missingref{Freeman \& Waldfogel (2001)}
 
     \item \textbf{Behavioral Parental Responses}:
-    Bonnet\& al. (2021);
+    \textcite{bonnet2021flip};
     \textit{(creditors)};
-    Rossin-Slater \& Wüst (2018);
-    Cancian \& al. (2013)
+    \textcite{rossin2018parental};
+    \missingref{Cancian et al.\ (2013)}
     \textit{(debtors)}.
 
     \item \textbf{French IFPA Evaluations}:
-    Titli et al.\ (CNAF, 2024);
-    HCFEA (2025)
+    \textcite{titlied2024};
+    \missingref{HCFEA (2025)}
 
   \end{itemize}
 
@@ -226,49 +244,79 @@
 
 
 
-% ============================================================
 % SLIDE 2 -- Data and Methodology
 % ============================================================
 \begin{frame}{Data and Methodology}
-
+\footnotesize
 \begin{columns}[T]
-
   % ---------- Left column: data ----------
-  \begin{column}{0.46\textwidth}
+  \begin{column}{0.41\textwidth}
     \blocklabel{Data}
-    \begin{itemize}
-      \item \textbf{Source}: \placeholder{dataset, producer, access}
-      \item \textbf{Population}: \placeholder{who, where, years}
-      \item \textbf{Unit}: \placeholder{unit of observation}
-      \item \textbf{Outcomes $Y$}: \placeholder{main outcomes}
-      \item \textbf{Treatment $D$}: \placeholder{how exposure is measured}
-      \item \textbf{Limitation}: \placeholder{main data limitation}
+    \begin{itemize}\setlength{\itemsep}{1pt}
+      \item \textbf{Source}: ALLSTAT-FR6 (CNAF, via CASD), panel 2017--2025
+      \item \textbf{Sample}: separated parents, $\geq 1$ child, child support due, $\pm 12$ months around each cutoff
+      \item \textbf{Cohort}: month of separation (\texttt{NBMSIFAM})
+      \item \textbf{Groups}: married vs.\ unmarried before separation (\texttt{SITFAM})
+      \item \textbf{Outcomes $Y$}: child support received, ASF, RSA, prime d'activit\'e, earnings at 6, 12, 24 months
+      \item \textbf{Covariates}: age, sex, no.\ of children, pre-separation income, municipality
+      \item \textbf{Limitation}: no IFPA status or title date
     \end{itemize}
   \end{column}
 
   % ---------- Right column: methodology ----------
-  \begin{column}{0.50\textwidth}
-    \blocklabel{Methodology}
-    \placeholder{Design: policy variation, treated vs.\ control}
-
-    \vspace{0.15cm}
-    \begin{keybox}[Specification]
-      \small
-      \[
-        Y_{it} = \alpha_i + \lambda_t + \beta \, D_{it} + X_{it}'\gamma + \varepsilon_{it}
-      \]
-      \placeholder{Definition of $\beta$ and of the estimand}
+  \begin{column}{0.57\textwidth}
+    \blocklabel{Methodology: difference-in-discontinuities}
+    \begin{keybox}[{Specification, at each cutoff $c^*$}]
+      \begin{align*}
+      Y_i =\; & \underbrace{\textcolor{red}{\beta}\,\text{Post}_i \times \text{Treated}_i}_{\textcolor{red}{\text{effect of default IFPA}}}
+      + \underbrace{\tau\,\text{Post}_i}_{\text{common jump}}
+      + \underbrace{\theta\,\text{Treated}_i}_{\text{group gap}} \\
+      & + \underbrace{f_g(c_i - c^*)}_{\text{cohort trends}}
+      + \underbrace{X_i'\gamma}_{\text{controls}}
+      + \varepsilon_i
+      \end{align*}
+      $\textcolor{red}{\beta}$: effect of \emph{default} vs.\ opt-in intermediation (intent-to-treat)
     \end{keybox}
-
-    \begin{itemize}
-      \item \textbf{Assumption}: \placeholder{identifying assumption}
-      \item \textbf{Threat}: \placeholder{main threat}
-      \item \textbf{Check}: \placeholder{test / robustness}
+    \begin{itemize}\setlength{\itemsep}{1pt}
+      \item \textbf{Assumptions}: (i) absent the reform, both groups jump equally at the cutoff; (ii) no sorting in separation timing or divorce type; (iii) no interaction with concurrent shocks
+      \item \textbf{Checks}: no bunching in separations or jump in group shares; covariate balance; placebo cutoffs; staggered DiD
+      \item \textbf{Caveat}: married $\neq$ judicial divorce $\Rightarrow$ conservative estimates
     \end{itemize}
   \end{column}
-
 \end{columns}
+\end{frame}
 
+% ============================================================
+% SLIDE 2bis -- Identification: two cutoffs, two groups
+% ============================================================
+\begin{frame}{Identification: Two Cutoffs, Two Groups}
+\vspace{0.6cm}
+\centering
+\resizebox{0.95\linewidth}{!}{%
+\begin{tikzpicture}[x=1.45cm, y=0.85cm, font=\small]
+  \def\cutA{2.33}\def\cutB{4}\def\asf{3.67}\def\xend{6}
+  \node[anchor=east, align=right] at (-0.2,2) {\textbf{Judicial divorces}\\[-2pt]{\scriptsize\color{textgrey}(married, divorced by a judge)}};
+  \node[anchor=east, align=right] at (-0.2,0.8) {\textbf{Other separations}\\[-2pt]{\scriptsize\color{textgrey}(cohabiting, PACS, notarial divorces)}};
+  \fill[textgrey!25] (0,1.75) rectangle (\cutA,2.25);
+  \fill[boxframe!75] (\cutA,1.75) rectangle (\xend,2.25);
+  \fill[textgrey!25] (0,0.55) rectangle (\cutB,1.05);
+  \fill[boxframe!75] (\cutB,0.55) rectangle (\xend,1.05);
+  \node[textgrey!80!black] at (\cutA/2,2) {\scriptsize opt-in};
+  \node[white] at ({(\cutA+\xend)/2},2) {\scriptsize\bfseries default IFPA};
+  \node[textgrey!80!black] at (\cutB/2,0.8) {\scriptsize opt-in};
+  \node[white] at ({(\cutB+\xend)/2},0.8) {\scriptsize\bfseries default IFPA};
+  \draw[-{Stealth}, thick] (0,0) -- (\xend+0.3,0) node[right] {\scriptsize cohort $c$};
+  \foreach \x/\l in {0/2021, 2/2022, 4/2023, 6/2024}
+    \draw (\x,0.08) -- (\x,-0.08) node[below] {\scriptsize \l};
+  \draw[boxframe, very thick, dashed] (\cutA,-0.1) -- (\cutA,2.6) node[above] {\scriptsize\bfseries Mar.\ 2022};
+  \draw[boxframe, very thick, dashed] (\cutB,-0.1) -- (\cutB,2.6) node[above] {\scriptsize\bfseries Jan.\ 2023};
+  \draw[textgrey, thin, dotted] (\asf,-0.1) -- (\asf,1.4);
+  \node[textgrey, anchor=north] at (\asf,-0.35) {\tiny ASF uprating};
+  \node[draw=boxframe, fill=boxback, rounded corners, align=left, anchor=north, text width=5.2cm]
+    at (0.9,-0.75) {\scriptsize \textbf{Cutoff 1}: treated = judicial divorces\\ control = other separations};
+  \node[draw=boxframe, fill=boxback, rounded corners, align=left, anchor=north, text width=5.2cm]
+    at (5.0,-0.75) {\scriptsize \textbf{Cutoff 2}: treated = other separations\\ control = judicial divorces (already treated)};
+\end{tikzpicture}}
 \end{frame}
 
 
@@ -303,6 +351,31 @@
   \end{column}
 \end{columns}
 
+\end{frame}
+
+
+% ============================================================
+% REFERENCES (appendix, not counted in the slide numbers)
+% ============================================================
+\begin{frame}[noframenumbering]{References}
+\vspace{-0.3cm}
+\scriptsize
+\begin{multicols}{2}
+  \setlength{\parskip}{3pt}
+  \printbibliography[heading=none]
+
+  % Not yet in references.bib (shown in red)
+  \everypar{\hangindent=1.2em\hangafter=1}
+  \missingref{Cancian, M., Heinrich, C. J., and Chung, Y. (2013). ``Discouraging disadvantaged fathers' employment: an unintended consequence of policies designed to support families''. \textit{Journal of Policy Analysis and Management} 32.4, pp.\ 758--784.}
+
+  \missingref{Freeman, R. B. and Waldfogel, J. (2001). ``Dunning delinquent dads: the effects of child support enforcement policy on child support receipt by never married women''. \textit{Journal of Human Resources} 36.2, pp.\ 207--225.}
+
+  \missingref{Garfinkel, I. and Klawitter, M. M. (1990). ``The effect of routine income withholding of child support on AFDC participation and costs''. \textit{Journal of Policy Analysis and Management} 9.2, pp.\ 155--177.}
+
+  \missingref{HCFEA (2025). \textit{Note sur l'interm\'ediation financi\`ere des pensions alimentaires}. Haut Conseil de la famille, de l'enfance et de l'\^age.}
+
+  {\color{textgrey}Data sources (motivation): CNAF (2023); INSEE (2024); Minist\`ere de la Justice (2022).}
+\end{multicols}
 \end{frame}
 
 \end{document}
