@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{dcolumn}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mdframed,xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{titling}
+\usepackage[a4paper, margin=1.7cm]{geometry}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=--, nosep}
+
+\usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+\title{Research Proposal
+ \\ Who pays when fathers don't? Default intermediation of child support in France
+}
+\author{Eve Samani, Isaure Pillet, Antony Albergne, Lucie Lang}
+\date{Fall 2026}
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{Public Economics -- ENSAE}
+    \fancyhead[C]{\includegraphics[height=0.75cm]{images/logo.png}}
+    \fancyhead[R]{\thedate}
+    \fancyfoot[C]{\thepage}
+}
+\pagestyle{plain}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vspace*{-0.8cm}
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+  \end{center}%
+  \par
+  \vskip 1em}
+\makeatother
+
+% Reusable framed box (left bar), as in the original template
+\newenvironment{notebox}[1][gray!70]{%
+  \begin{mdframed}[
+    leftline=true,
+    linecolor=#1,
+    linewidth=1.5pt,
+    innerleftmargin=8pt,
+    innerrightmargin=8pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    skipabove=10pt,
+    skipbelow=12pt
+  ]\small}{\end{mdframed}}
+
+\usepackage{lipsum}
+
+
+\begin{document}
+
+\maketitle
+
+\noindent\begin{tabular}{@{}ll}
+    Authors & \textbf{\theauthor}\\
+    Course & Public Economics (Prof. Enrico Rubolino), ENSAE \\
+    Date & \textbf{\thedate}\\
+\end{tabular} \\
+
+\begin{notebox}
+\noindent\textbf{Abstract.}
+
+blablabla
+\end{notebox}
+
+%%%% MOTIVATION %%%%
+\section{Motivation and research question}
+
+blablabla
+
+%%%% LITERATURE %%%%
+\section{Literature review}
+
+blablabla
+
+%%%% INSTITUTIONAL CONTEXT %%%%
+\section{Institutional context}
+
+blablabla
+
+%%%% DATA & METHODOLOGY %%%%
+\section{Data and empirical strategy}
+
+\subsection{Data}
+
+blablabla
+
+\subsection{Identification strategy}
+
+blablabla
+
+%%%% EXPECTED RESULTS %%%%
+\section{Expected results}
+
+\begin{itemize}
+    \item \textbf{H1:} \dots
+    \item \textbf{H2:} \dots
+    \item \textbf{H3:} \dots
+\end{itemize}
+
+\begin{notebox}[red!60]
+\noindent\textbf{Limitations}
+
+blablabla
+\end{notebox}
+
+\printbibliography
+
+\end{document}
