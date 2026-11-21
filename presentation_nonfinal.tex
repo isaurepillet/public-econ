@@ -1,0 +1,531 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% ============================================================
+% Packages
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{tcolorbox}
+% \tcbuselibrary{skins} % requires tikzfill (missing from TeX Live basic)
+\usetikzlibrary{arrows.meta}
+\usepackage[style=authoryear, backend=biber, maxcitenames=2, maxbibnames=99, uniquename=false, uniquelist=false]{biblatex}
+\addbibresource{references.bib}
+\usepackage{multicol}
+\setbeamertemplate{bibliography item}{}
+\ExecuteBibliographyOptions{giveninits=true, isbn=false, url=false, doi=false}
+\DeclareNameAlias{default}{family-given}
+\DeclareNameAlias{sortname}{family-given}
+\renewcommand*{\bibfont}{\scriptsize}
+\setlength{\bibitemsep}{2pt}
+\renewbibmacro{in:}{}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+% References not yet in references.bib are shown in red
+\newcommand{\missingref}[1]{\textcolor{red}{#1}}
+
+% ============================================================
+% Colours (same as the written proposal)
+% ============================================================
+\definecolor{boxframe}{RGB}{150,58,78}
+\definecolor{boxback}{RGB}{248,238,239}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{textgrey}{RGB}{110,110,110}
+
+% ============================================================
+% Beamer look
+% ============================================================
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=0.6cm, text margin right=0.6cm}
+\setbeamercolor{frametitle}{fg=boxframe}
+\setbeamerfont{frametitle}{series=\bfseries, size=\Large}
+\setbeamercolor{structure}{fg=boxframe}
+\setbeamertemplate{itemize item}{\color{boxframe}--}
+\setbeamertemplate{itemize subitem}{\color{boxframe}\textbullet}
+\setbeamertemplate{enumerate item}{\color{boxframe}\insertenumlabel.}
+
+% Header: frame title with a coloured rule underneath
+\setbeamertemplate{frametitle}{%
+  \vspace{0.4cm}%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par}
+  \vspace{0.1cm}
+  {\color{boxframe}\rule{\linewidth}{0.6pt}}
+}
+
+% Footer: course | title | page
+\setbeamertemplate{footline}{%
+  \hspace{0.4cm}{\scriptsize\color{textgrey}ENSAE -- IP Paris \;|\; Public Economics \;|\; \insertshorttitle}
+  \hfill
+  {\scriptsize\color{textgrey}\insertframenumber/\inserttotalframenumber}\hspace{0.4cm}
+  \vspace{0.25cm}
+}
+
+% ============================================================
+% Helpers
+% ============================================================
+% Grey placeholder text, to replace with content
+\newcommand{\placeholder}[1]{{\color{textgrey}\itshape #1}}
+% Coloured box, same style as the written proposal
+\newtcolorbox{keybox}[1][]{%
+  colback=boxback, colframe=boxframe, boxrule=0.6pt, arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt,
+  fonttitle=\bfseries\small, title={#1}
+}
+
+\newcommand{\blocklabel}[1]{\vspace{0.15cm}{\color{boxframe}\textbf{#1}}\par\vspace{0.05cm}}
+
+% ============================================================
+% Title information
+% ============================================================
+\title[\placeholder{Who pays when fathers don't?}]{\placeholder{Who pays when fathers don't?}}
+\subtitle{\placeholder{Default intermediation of child support in France}}
+\author{\placeholder{Eve Samani}, \placeholder{Isaure Pillet}, \placeholder{Antony Albergne}, \placeholder{Lucie Lang}}
+\institute{Public Economics -- Enrico Rubolino \\ ENSAE -- IP Paris, 3A}
+\date{Fall 2026}
+
+% Title page layout
+\setbeamertemplate{title page}{%
+  \vfill
+  \begin{center}
+    {\color{boxframe}\rule{0.7\linewidth}{0.6pt}}\par
+    \vspace{0.4cm}
+    {\usebeamercolor[fg]{frametitle}\Huge\bfseries\inserttitle\par}
+    \vspace{0.25cm}
+    {\large\color{textgrey}\insertsubtitle\par}
+    \vspace{0.4cm}
+    {\color{boxframe}\rule{0.7\linewidth}{0.6pt}}\par
+    \vspace{0.6cm}
+    {\normalsize\insertauthor\par}
+    \vspace{0.3cm}
+    {\small\color{textgrey}\insertinstitute\par}
+    \vspace{0.2cm}
+    {\small\color{textgrey}\insertdate\par}
+  \end{center}
+  \vfill
+}
+
+\begin{document}
+
+% ============================================================
+% TITLE SLIDE (no footer, not counted in the slide numbers)
+% ============================================================
+\begin{frame}[plain, noframenumbering]
+  \titlepage
+\end{frame}
+
+
+
+% ============================================================
+% SLIDE 1 -- Motivation and Literature
+% ============================================================
+
+% ============================================================
+% SLIDE 1 -- Motivation and Literature
+% ============================================================
+
+\begin{frame}{Motivation and Literature}
+
+\vspace{-0.35cm}
+
+\begin{columns}[T,onlytextwidth]
+% ============================================================
+% LEFT COLUMN -- MOTIVATION
+% ============================================================
+\begin{column}{0.48\textwidth}
+
+  
+\blocklabel{Motivation}
+\footnotesize
+
+\begin{itemize}
+    \setlength{\itemsep}{0.09cm}
+    \setlength{\topsep}{0pt}
+    \justifying
+
+    \item \textbf{Gendered costs of divorce:}
+    Women's living standards fall by
+    \textbf{\textcolor{boxframe}{19\%}}
+    one year after divorce, compared with
+    \textbf{\textcolor{boxframe}{2\%}}
+    for men (Bonnet et al., 2021).
+
+    \item \textbf{Unreliable child support:}
+    Child support represents
+    \textbf{\textcolor{boxframe}{18\%}}
+    of single-parent families' resources,
+    yet \textbf{\textcolor{boxframe}{30--40\%}}
+    of payments were fully or partially unpaid.
+
+    \item \textbf{Policy reform:}
+    France progressively introduced
+    \textbf{automatic public intermediation}
+    of child support (March 2022;
+    January 2023) to improve payment reliability.
+
+\end{itemize}
+
+\vspace{0.03cm}
+{\tiny\color{textgrey}
+Sources: Bonnet et al. (2021); CNAF (2023);
+Ministry of Justice (2022).
+}
+\end{column}
+
+% ============================================================
+% RIGHT COLUMN -- RELATED LITERATURE
+% ============================================================
+\begin{column}{0.48\textwidth}
+
+  \blocklabel{Related literature}
+  \footnotesize
+
+  \begin{itemize}
+    \setlength{\itemsep}{0.09cm}
+    \setlength{\topsep}{0pt}
+    \justifying
+
+    \item \textbf{Post-Separation Income \& Support}:
+    \textcite{bonnet2021flip} 
+
+    \item \textbf{Agency Failures \& Enforcement}:
+    \textcite{weiss1993transfers};
+    \textcite{chiappori2007divorce};
+    \textcite{freeman2001dunning}.
+
+    \item \textbf{Behavioral Responses \& IFPA}:
+    \textcite{rossin2018parental};
+    \textcite{cancian2013discouraging};
+    \textcite{titlied2024} \textit{(French IFPA)}.
+
+  \end{itemize}
+
+\end{column}
+
+\end{columns}
+
+
+% ============================================================
+% BOTTOM BOXES -- ALIGNED HORIZONTALLY
+% ============================================================
+\vspace{-0.25cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% LEFT BOX -- RESEARCH QUESTION
+\begin{column}{0.48\textwidth}
+    \begin{keybox}[Research question]
+        \footnotesize
+        How does the shift to default public
+        child-support intermediation affect
+        payment compliance and mothers'
+        economic security after separation?
+    \end{keybox}
+\end{column}
+
+% RIGHT BOX -- OUR CONTRIBUTION
+\begin{column}{0.48\textwidth}
+    \begin{keybox}[Our contribution]
+        \footnotesize
+        France's phased reform provides a rare
+        opportunity to investigate how public
+        enforcement of private transfers shapes
+        women's economic security after separation.
+    \end{keybox}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+% ============================================================
+% SLIDE 2 -- Data
+% ============================================================
+\begin{frame}{Data}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+  % ---------- Left column: source and sample ----------
+  \begin{column}{0.44\textwidth}
+    \blocklabel{Source}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+      \item \textbf{ALLSTAT-FR6} (CNAF, accessed via CASD)
+      \item Administrative panel, \textbf{2017--2025}
+    \end{itemize}
+
+    \blocklabel{Sample}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+      \item Separated parents with $\geq 1$ child and child support due
+      \item Separations within $\pm 12$ months of each cutoff (March 2022; January 2023)
+    \end{itemize}
+
+    \blocklabel{Limitation}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+      \item No individual IFPA status or title date $\Rightarrow$ we identify the effect of
+            \emph{exposure} to the default, not of take-up
+    \end{itemize}
+  \end{column}
+
+  % ---------- Right column: variables ----------
+  \begin{column}{0.53\textwidth}
+    \blocklabel{Variables}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{@{}p{0.27\linewidth}p{0.66\linewidth}@{}}
+      \toprule
+      \textbf{Role} & \textbf{Definition} \\
+      \midrule
+      Running variable & Month of separation $c_i$ (\texttt{NBMSIFAM}) \\
+      Group & Married vs.\ unmarried before separation (\texttt{SITFAM}) \\
+      Outcomes $Y_i$ & Child support received; ASF; RSA; prime d'activit\'e; earnings \\
+      Horizons & 6, 12 and 24 months after separation \\
+      Covariates $X_i$ & Age, sex, number of children, pre-separation income, municipality \\
+      \bottomrule
+    \end{tabular}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ============================================================
+% SLIDE 3 -- Methodology
+% ============================================================
+\begin{frame}{Methodology: Difference-in-Discontinuities}
+\vspace{-0.2cm}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+  % ---------- Left column: specification and interpretation ----------
+  \begin{column}{0.49\textwidth}
+    \begin{keybox}[{Specification, at each cutoff $c^*$}]
+      \vspace{-0.25cm}
+      \begin{align*}
+      Y_i =\; & \underbrace{\textcolor{red}{\beta}\,\text{Post}_i \times \text{Treated}_i}_{\textcolor{red}{\text{effect of default IFPA}}}
+      + \underbrace{\tau\,\text{Post}_i}_{\text{common jump}}
+      + \underbrace{\theta\,\text{Treated}_i}_{\text{group gap}} \\
+      & + \underbrace{f_g(c_i - c^*)}_{\text{cohort trends}}
+      + \underbrace{X_i'\gamma}_{\text{controls}}
+      + \varepsilon_i
+      \end{align*}
+      \vspace{-0.35cm}
+    \end{keybox}
+
+    \blocklabel{Causal evidence on default vs.\ opt-in enforcement}
+    \justifying
+    We estimate the effect of making public intermediation the \emph{default}, not of intermediation itself.
+    $\textcolor{red}{\beta}$ is an ITT, which is policy-relevant because the default \emph{is} the reform.
+
+    \blocklabel{Design}
+    \justifying
+    Two cutoffs where treated and control groups swap roles, which allows each design to be checked against the other.
+  \end{column}
+
+  % ---------- Right column: timeline, assumptions, checks ----------
+  \begin{column}{0.49\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{%
+    \begin{tikzpicture}[x=1.45cm, y=0.85cm, font=\small]
+      \def\cutA{2.33}\def\cutB{4}\def\asf{3.67}\def\xend{6}
+      \node[anchor=east, align=right] at (-0.2,2) {\textbf{Judicial divorces}\\[-2pt]{\scriptsize\color{textgrey}(married, divorced by a judge)}};
+      \node[anchor=east, align=right] at (-0.2,0.8) {\textbf{Other separations}\\[-2pt]{\scriptsize\color{textgrey}(cohabiting, PACS, notarial divorces)}};
+      \fill[textgrey!25] (0,1.75) rectangle (\cutA,2.25);
+      \fill[boxframe!75] (\cutA,1.75) rectangle (\xend,2.25);
+      \fill[textgrey!25] (0,0.55) rectangle (\cutB,1.05);
+      \fill[boxframe!75] (\cutB,0.55) rectangle (\xend,1.05);
+      \node[textgrey!80!black] at (\cutA/2,2) {\scriptsize opt-in};
+      \node[white] at ({(\cutA+\xend)/2},2) {\scriptsize\bfseries default IFPA};
+      \node[textgrey!80!black] at (\cutB/2,0.8) {\scriptsize opt-in};
+      \node[white] at ({(\cutB+\xend)/2},0.8) {\scriptsize\bfseries default IFPA};
+      \draw[-{Stealth}, thick] (0,0) -- (\xend+0.3,0) node[right] {\scriptsize cohort $c$};
+      \foreach \x/\l in {0/2021, 2/2022, 4/2023, 6/2024}
+        \draw (\x,0.08) -- (\x,-0.08) node[below] {\scriptsize \l};
+      \draw[boxframe, very thick, dashed] (\cutA,-0.1) -- (\cutA,2.6) node[above] {\scriptsize\bfseries Mar.\ 2022};
+      \draw[boxframe, very thick, dashed] (\cutB,-0.1) -- (\cutB,2.6) node[above] {\scriptsize\bfseries Jan.\ 2023};
+      \draw[textgrey, thin, dotted] (\asf,-0.1) -- (\asf,1.4);
+      \node[textgrey, anchor=north] at (\asf,-0.35) {\tiny ASF uprating};
+      \node[draw=boxframe, fill=boxback, rounded corners, align=left, anchor=north, text width=5.2cm]
+        at (0.9,-0.75) {\scriptsize \textbf{Cutoff 1}: treated = judicial divorces\\ control = other separations};
+      \node[draw=boxframe, fill=boxback, rounded corners, align=left, anchor=north, text width=5.2cm]
+        at (5.0,-0.75) {\scriptsize \textbf{Cutoff 2}: treated = other separations\\ control = judicial divorces (already treated)};
+    \end{tikzpicture}}
+
+    \raggedright
+    \begin{itemize}\setlength{\itemsep}{1pt}
+      \item \textbf{Assumptions}: (i) absent the reform, both groups jump equally at the cutoff; (ii) no sorting in separation timing or divorce type; (iii) no interaction with concurrent shocks
+      \item \textbf{Checks}: no bunching in separations or jump in group shares; covariate balance; placebo cutoffs; staggered DiD
+      \item \textbf{Caveat}: married $\neq$ judicial divorce $\Rightarrow$ conservative estimates
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ============================================================
+% SLIDE 4 -- Expected effects: incidence of non-payment
+% ============================================================
+\begin{frame}{Expected Effects: Incidence of Non-Payment}
+\vspace{-0.3cm}
+\footnotesize
+
+\blocklabel{Motivation}
+Child support is \textbf{18\%} of single-parent families' resources, yet \textbf{30--40\%} of payments go unpaid: the loss falls on the mother or the State \parencite{bonnet2021flip}.
+
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.41\textwidth}
+    \blocklabel{Hypothesised mechanism}
+    \begin{keybox}[Three-way incidence]
+      \vspace{-0.3cm}
+      \begin{align*}
+        \text{Mother: } c^m &= z^m + p\,S + B\big(z^m,\tilde S\big) \\
+        \text{Father: } c^f &= z^f - p\,S
+      \end{align*}
+      \vspace{-0.45cm}
+
+      {\scriptsize $S$: support due; $p$: compliance, raised by default intermediation where the father can pay;
+      $B$: ASF, RSA, prime d'activit\'e; $\tilde S$: support counted in means-testing; $\rho \equiv -\Delta B / (S\Delta p)$.}
+      \vspace{-0.1cm}
+      \[
+        \underbrace{-\Delta c^f}_{\text{father pays}}
+        = \underbrace{(1-\rho)\,S\,\Delta p}_{\text{mother gains}}
+        + \underbrace{\rho\,S\,\Delta p}_{\text{State saves}}
+      \]
+      \vspace{-0.4cm}
+    \end{keybox}
+  \end{column}
+
+  \begin{column}{0.56\textwidth}
+    \blocklabel{Expected effects: heterogeneity across populations}
+    \renewcommand{\arraystretch}{1.05}
+    \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\linewidth}cc>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
+      \toprule
+      & $\Delta p$ & $\rho$ & Expected effect \\
+      \midrule
+      \multicolumn{4}{@{}l}{\color{boxframe}\textbf{Fathers}} \\
+      Able to pay, defaulting & $> 0$ & & Pay more: $c^f \downarrow$ \\
+      Unable to pay (low income) & $\approx 0$ & & No change; may cut formal earnings \parencite{cancian2013discouraging} \\
+      \midrule
+      \multicolumn{4}{@{}l}{\color{boxframe}\textbf{Mothers}} \\
+      RSA recipients receiving support & & $\approx 1$ & Little change: the State pays less \\
+      Above benefit thresholds & & $\approx 0$ & Net income gain \\
+      Unpaid support counted ($\tilde S = S$) & & $\approx 0$ & Gain \\
+      \bottomrule
+    \end{tabular}
+
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ============================================================
+% SLIDE 5 -- Expected effects: labour supply
+% ============================================================
+\begin{frame}{Expected Effects: Labour Supply}
+\vspace{-0.3cm}
+\footnotesize
+
+\blocklabel{Motivation}
+Child support is a recurrent \emph{non-labour} income: making it larger and more reliable changes both the level and the volatility of resources.
+
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.50\textwidth}
+    \blocklabel{Hypothesised mechanisms}
+    \begin{keybox}[Intensive margin: income effect]
+      \vspace{-0.2cm}
+      \begin{gather*}
+        \max_{c,z}\; u(c,z) \quad \text{s.t.} \quad c = (1-\tau)\,z + R + (1-t_S)\,p\,S \\[0.1cm]
+        \Delta z \simeq \frac{\eta}{1-\tau}\,(1-t_S)\,S\,\Delta p,
+        \qquad \eta \equiv (1-\tau)\,\frac{\partial z}{\partial R} \le 0
+      \end{gather*}
+      \vspace{-0.35cm}
+
+      {\scriptsize $t_S$: implicit tax on support ($t_S = 1$ for RSA recipients, $0$ above thresholds).}
+    \end{keybox}
+    \vspace{-0.2cm}
+    \begin{keybox}[Extensive margin: stabilisation effect]
+      \vspace{-0.2cm}
+      \[
+        \text{work} \iff u(c_1) - u(c_0) \geq q
+      \]
+      \vspace{-0.4cm}
+
+      {\scriptsize $q$: fixed cost of work (e.g.\ childcare). Reliable support makes $q$ easier to cover $\Rightarrow$ more continuous employment.}
+    \end{keybox}
+  \end{column}
+
+  \begin{column}{0.47\textwidth}
+    \blocklabel{Expected effects}
+    \begin{itemize}\setlength{\itemsep}{3pt}
+      \item \textbf{Net effect ambiguous}: intensive $\downarrow$ vs.\ extensive $\uparrow$.
+      \item \textbf{No income effect for RSA recipients} ($t_S = 1$): responses concentrated above benefit thresholds.
+      \item \textbf{Per-euro effect} $\beta_z / \beta_S$, comparable with the MPE literature: \$1 of annual unearned income
+            $\Rightarrow -\$0.52$ of labour earnings \textcite{golosov2024}.
+            {\color{textgrey}Caveat: stabilisation works through regularity, not the amount (exclusion restriction).}
+      \item \textbf{Gendered responses}: same incentive, different response by gender and gender norms
+            \textcite{giommoni2025}.
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ============================================================
+% SLIDE 6 -- Expected contributions
+% ============================================================
+\begin{frame}{Expected Contributions}
+\vspace{-0.2cm}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.62\textwidth}
+\begin{enumerate}
+  \setlength{\itemsep}{0.1cm}
+  \justifying
+  \item \textbf{Causal evidence on default vs.\ opt-in enforcement.} We estimate the effect of making public
+        intermediation the default, not of intermediation itself. The estimate is an ITT, which is policy-relevant
+        because the default is the reform.
+  \item \textbf{Incidence of non-payment.} We decompose mothers' post-separation resources into child support received
+        and public transfers (ASF, RSA, prime d'activit\'e). This shows who bears unpaid support: the mother, the State or the father.
+  \item \textbf{Labour supply channels.} We separate the income effect (intensive margin) from the stabilisation effect
+        (extensive margin). Scaling the ITT by the first stage gives a per-euro effect that can be compared with the MPE
+        literature \textcite{golosov2024}.
+  \item \textbf{Design.} We use a difference-in-discontinuities with two cutoffs where treated and control groups swap
+        roles, which allows each design to be checked against the other.
+\end{enumerate}
+\end{column}
+
+\begin{column}{0.34\textwidth}
+\begin{keybox}[What we do not do (scope)]
+\begin{itemize}
+  \setlength{\itemsep}{0.08cm}
+  \item No effect of IFPA \emph{take-up} (individual IFPA status not observed)
+  \item No outcomes for children
+  \item No welfare analysis or optimal design of enforcement
+  \item Short to medium run only ($\leq 24$ months)
+\end{itemize}
+\end{keybox}
+\vspace{0.1cm}
+\begin{keybox}[Who pays when fathers don't?]
+  Likely mothers who bore defaults alone gain; for the poorest, the reform may only change \emph{who} pays.
+\end{keybox}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ============================================================
+% REFERENCES (appendix, not counted in the slide numbers)
+% ============================================================
+\begin{frame}[noframenumbering]{References}
+\vspace{-0.3cm}
+\scriptsize
+\begin{multicols}{2}
+  \setlength{\parskip}{3pt}
+  \printbibliography[heading=none]
+
+  % Data sources (not in references.bib)
+  \everypar{\hangindent=1.2em\hangafter=1}
+
+  {\color{textgrey}Data sources (motivation): CNAF (2023); INSEE (2024); Minist\`ere de la Justice (2022).}
+\end{multicols}
+\end{frame}
+
+\end{document}
